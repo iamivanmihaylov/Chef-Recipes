@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 body {
-  background-color: lightblue;
+  background-color: white;
   margin: 0;
+  font-family: 'Crimson Text', sans-serif;
 }
 
 li {
@@ -27,4 +28,8 @@ html {
 
 h1,h2,h3,h4,h5,h6,a{
     font-family: 'Raleway', sans-serif;
+}
+
+p{
+  margin: 0;
 }
