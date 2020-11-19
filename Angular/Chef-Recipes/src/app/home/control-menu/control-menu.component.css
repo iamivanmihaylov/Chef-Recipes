@@ -1,0 +1,15 @@
+.order-by-category{
+    display: flex;
+}
+
+.main-control-menu{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+    
+}
+
+.category{
+    margin-left: 50px;
+    flex-basis: 100px;
+}

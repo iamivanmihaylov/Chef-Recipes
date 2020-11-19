@@ -1,6 +1,8 @@
 div{
     background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
     url('../../../assets/images/homePage-background.jpg');
+    background-position: center;
+    background-repeat: repeat;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@ div{
     width: 700px;
     color: white;
     text-indent: 25px;
-    text-shadow: 1px 1px 7px black;
+    text-shadow: 2px 2px 5px black;
 }
 
 .author{
@@ -21,5 +23,5 @@ div{
     font-size: 27px;
     align-self: flex-end;
     margin-right: 450px;
-    text-shadow: 1px 1px 7px black;
+    text-shadow: 2px 2px 5px black;
 }
