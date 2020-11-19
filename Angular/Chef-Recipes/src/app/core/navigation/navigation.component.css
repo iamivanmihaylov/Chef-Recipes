@@ -4,7 +4,7 @@
 }
 
 .logo-wrapper{
-    width: 85px;
+    width: 65px;
 }
 
 .navigation-container nav{
@@ -47,4 +47,8 @@
     border: 3.5px solid  #111111;
     background-color:  #111111;
     color: white;
+}
+
+.auth-list-itme{
+    margin: 0px 20px;
 }
