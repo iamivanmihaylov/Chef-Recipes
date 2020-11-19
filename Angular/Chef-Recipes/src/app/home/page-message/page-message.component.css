@@ -1,0 +1,25 @@
+div{
+    background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
+    url('../../../assets/images/homePage-background.jpg');
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chef-message{
+    font-size: 35px;
+    width: 700px;
+    color: white;
+    text-indent: 25px;
+    text-shadow: 1px 1px 7px black;
+}
+
+.author{
+    color: white;
+    font-size: 27px;
+    align-self: flex-end;
+    margin-right: 450px;
+    text-shadow: 1px 1px 7px black;
+}
