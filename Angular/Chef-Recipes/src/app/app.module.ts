@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { UserModule } from './user/user.module';
+import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    UserModule,
+    RecipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
