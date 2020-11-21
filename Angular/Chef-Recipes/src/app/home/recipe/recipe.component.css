@@ -51,6 +51,20 @@
     position: relative;
 }
 
+.image:hover{
+    cursor: pointer;
+}
+
+.fa-comment:hover,
+.fa-heart:hover,
+.fa-user-circle:hover,
+.title:hover,
+.user-info span:hover{
+    color: #b2b2b2;
+    cursor: pointer;
+}
+
+
 .image::after{
     content:'';
     position:absolute;
