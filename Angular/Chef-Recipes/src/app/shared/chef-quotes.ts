@@ -1,4 +1,4 @@
-import { IChefQuote} from './chef-quotes.model'
+import { IChefQuote} from './interfaces/chef-quotes.model'
 
 let chefQuotes:IChefQuote[] =[
     {

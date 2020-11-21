@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IChefQuote } from '../shared/chef-quotes.model';
-import { ChefQuotesService } from '../shared/chef-quotes.service'
+import { IChefQuote } from '../../shared/interfaces/chef-quotes.model';
+import { ChefQuotesService } from '../../shared/services/chef-quotes.service'
 import { interval, Subscription } from "rxjs";
 
 @Component({

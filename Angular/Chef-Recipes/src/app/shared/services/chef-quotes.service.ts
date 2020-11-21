@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IChefQuote } from './chef-quotes.model';
-import { chefQuotes } from './chef-quotes'
+import { IChefQuote } from '../interfaces/chef-quotes.model';
+import { chefQuotes } from '../chef-quotes'
 
 @Injectable({
   providedIn: 'root'
