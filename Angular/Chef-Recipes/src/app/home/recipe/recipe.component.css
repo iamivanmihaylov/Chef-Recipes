@@ -48,13 +48,25 @@
     border-top-right-radius: 10px;
     width: 350px;
     height: 305px;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 25%), url("https://recipes.heart.org/-/media/aha/recipe/recipe-images/mediterranean-salad.jpg?h=636&la=en&mw=890&w=890&hash=8A95325FBD7890C243CFD1124CFBA7FA090E181B"); 
-    background-size:cover;
+    position: relative;
 }
 
+.image::after{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%; height:100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 25%); /* W3C */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 .image img{
     height: 100%;
     width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    user-select: none;
    
 }
 
@@ -74,4 +86,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    z-index: 1;
 }
