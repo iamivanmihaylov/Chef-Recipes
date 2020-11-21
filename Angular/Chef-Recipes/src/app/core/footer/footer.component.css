@@ -28,14 +28,17 @@
 }
 
 .list-item{
+    margin: 20px 0;
+}
+
+.list-item a{
     color: #B2B2B2;
     font-weight: 600;
-    padding: 10px 0;
     font-size: 18px;
 }
 
 
-.list-item:hover{
+.list-item a:hover{
     color: white;
     font-weight: 600;
     font-size: 18px;
@@ -67,5 +70,5 @@
 }
 
 .list-item-last{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
