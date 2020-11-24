@@ -1,0 +1,54 @@
+.img-wrapper img{
+    width: 300px;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.header{
+    background-image: url('../../../assets/images/pexels-olia-danilevich-5742698.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+}
+
+h1,h2{
+    margin: 0;
+}
+
+.section:nth-child(odd){
+    background-color: #F2F2F2;
+}
+
+.text{
+    margin: 0 40px;
+    flex-basis: 700px;
+}
+
+.text h2{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.text p{
+    font-size: 20px;
+    font-family: 'Crimson Text';
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    height: 60vh;
+}
+
+.header h1{
+    flex-basis: 300px;
+    margin-left: 300px;
+}

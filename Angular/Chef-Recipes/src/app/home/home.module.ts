@@ -7,11 +7,12 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { RouterModule } from '@angular/router';
 import { RecipeModule } from '../recipe/recipe.module';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, PageMessageComponent, ControlMenuComponent, AboutPageComponent, ContactPageComponent],
+  declarations: [HomePageComponent, PageMessageComponent, ControlMenuComponent, AboutPageComponent, ContactPageComponent, PrivacyComponent],
   imports: [
     CommonModule,
     RouterModule,
