@@ -1,0 +1,31 @@
+.img-wrapper img{
+    width: 500px;
+}
+.img-wrapper{
+    width: 500px;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0px 200px;
+    padding: 100px 0px;
+}
+
+.buttons a{
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+.text{
+    font-size: 20px;
+    margin-bottom: 70px;
+    margin-top: 30px;
+    font-weight: 700
+}
