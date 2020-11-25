@@ -36,7 +36,7 @@ form{
 .title span{
     border-bottom: 3px solid black;
     text-align: center;
-    width: 100px;
+    width: fit-content;
 }
 
 .username input,.password input,.email input,.confirm-password input{
