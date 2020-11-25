@@ -38,3 +38,8 @@ p{
 a{
   text-decoration: none;
 }
+
+fieldset{
+  border: none;
+  padding: 0;
+}
