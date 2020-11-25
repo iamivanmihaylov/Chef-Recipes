@@ -75,9 +75,14 @@ textarea{
     border-radius: 10px;
     font-family: sans-serif;
     resize: vertical;
+    font-size: 17px;
 }
 
 label{
     font-weight: 900;
     margin-bottom: 5px;
+}
+
+input{
+    font-size: 17px;
 }

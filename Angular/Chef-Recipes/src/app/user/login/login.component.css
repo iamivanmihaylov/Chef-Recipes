@@ -1,0 +1,79 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
+    url('../../../assets/images/homePage-background.jpg');
+    background-position: center;
+    background-repeat: repeat;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.main-form{
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin: 125px 0px;
+}
+
+.title span{
+    border-bottom: 3px solid black;
+    text-align: center;
+    width: 100px;
+}
+
+.username input,.password input{
+    font-size: 17px;
+    width: 270px;
+}
+
+form *{
+    margin: 15px 10px;
+}
+
+.password{
+    margin-bottom: 10px !important;
+   
+}
+
+button{
+    padding: 7px 25px;
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 15px;
+}
+.username{
+    margin-bottom: 5px !important;
+}
+
+form div{
+  display: flex;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+i{
+    font-size: 18px;
+}
