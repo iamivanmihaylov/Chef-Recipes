@@ -64,6 +64,29 @@
     cursor: pointer;
 }
 
+.fa-comment,
+.fa-heart,
+.fa-user-circle,
+.title,
+.user-info span{
+    transition: all .5s ease;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.fa-heart{
+    transition: all .5s ease;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.fa-heart:hover{
+    transform: scale(1.1,1.1);
+}
 
 .image::after{
     content:'';

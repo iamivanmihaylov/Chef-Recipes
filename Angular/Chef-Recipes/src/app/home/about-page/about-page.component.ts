@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about-page',
@@ -11,5 +11,6 @@ export class AboutPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

@@ -5,6 +5,12 @@
 
 .logo-wrapper{
     width: 65px;
+    transition: 2s, 2s, transform 1s;
+}
+
+.logo-wrapper:hover{
+    position: relative;
+    transform: scale(1.1,1.1);
 }
 
 .navigation-container nav{
@@ -31,6 +37,17 @@
     margin: 0 20px;
     font-weight: 600;
     padding: 25px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transition: all .2s ease;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.list-item:hover{
+    border-top: 5px solid black;
 }
 
 .list-item a{
@@ -56,4 +73,9 @@
 
 .auth-list-itme{
     margin: 0px 20px;
+    transition-duration: 0.5s;
+}
+
+.auth-list-itme:hover{
+
 }

@@ -43,3 +43,8 @@ fieldset{
   border: none;
   padding: 0;
 }
+
+::selection{
+  background-color: black;
+  color: white;
+}
