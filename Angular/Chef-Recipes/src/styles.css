@@ -6,7 +6,6 @@ body {
   background-color: white;
   margin: 0;
   font-family: 'Karla', sans-serif;
-  user-select: none;
 }
 
 li {
@@ -47,4 +46,16 @@ fieldset{
 ::selection{
   background-color: black;
   color: white;
+}
+
+img{
+  user-select: none;
+}
+
+button{
+  user-select: none;
+}
+
+.chef-message{
+  user-select: none;
 }
