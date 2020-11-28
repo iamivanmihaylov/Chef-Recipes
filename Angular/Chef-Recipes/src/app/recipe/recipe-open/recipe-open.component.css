@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 140px;
+}
+
+.img-wrapper{
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    
+    
+}
+
+.image img{
+    object-fit: scale-down;
+    width: 700px;
+    height: 500px;
+}

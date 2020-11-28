@@ -19,14 +19,18 @@ export class PageMessageComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
-    this.chefQuote = this.chefService.getChefQuote();
-    this.intervalObservable = interval(20000).subscribe(() => {
-      this.chefQuote = this.chefService.getChefQuote();
-    })
+    this.changeQuote();
   }
 
   ngOnDestroy() : void{
     this.intervalObservable?.unsubscribe();
+  }
+
+  changeQuote():void{
+    this.chefQuote = this.chefService.getChefQuote();
+    this.intervalObservable = interval(20000).subscribe(() => {
+      this.chefQuote = this.chefService.getChefQuote();
+    })
   }
 
 }
