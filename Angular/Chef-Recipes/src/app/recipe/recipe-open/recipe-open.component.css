@@ -1,21 +1,148 @@
-.main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 140px;
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 140px;
 }
 
-.img-wrapper{
-    align-self: stretch;
+.img-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  object-fit: scale-down;
+  width: 700px;
+  height: 500px;
+}
+
+.aside {
+  align-self: start;
+  margin-left: 20px;
+  border-left: 2px solid black;
+  padding-left: 20px;
+  align-self: stretch;
+}
+
+.user .fa-user-circle{
+    font-size: 33px;
+}
+
+.user{
     display: flex;
     align-items: center;
+}
+
+.user-name{
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.description{
+    margin-top: 15px;
+    height: 80px;
+    overflow-y: scroll;
+}
+
+.menu{
+    display: flex;
+    margin-top: 10px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.menu div{
+    margin: 0px 10px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+}
+
+.menu-ingredients,.menu-comments{
+    transition: all .5s ease;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+
+.menu-ingredients:hover,.menu-comments:hover{
+    border-bottom: 3px solid black !important;
+}
+
+.desc-menu-hr{
+    border-color:black;
     background-color: black;
-    
-    
+    margin: 20px 0px;
 }
 
-.image img{
-    object-fit: scale-down;
-    width: 700px;
-    height: 500px;
+.comment-user-info{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 3px;
 }
+
+.comment-user-info i{
+    font-size: 25px;
+}
+
+.comment-user-info span{
+    margin-left: 5px;
+}
+
+.comment{
+    margin: 20px 0;
+}
+
+.comment:nth-child(1){
+    margin-top: 0px;
+}
+
+
+.comments{
+    overflow-y: scroll;
+    height: 300px;
+}
+
+.menu-like{
+    transition: all .5s ease;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.menu-like:hover{
+    transform: scale(1.1,1.1);
+    color: rgba(237,0,53,1)
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 10px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(44, 44, 44); 
+  }
+
+  .comment-user-info{
+      margin-bottom: 10px;
+  }
