@@ -26,6 +26,7 @@ form{
     width: 450px;
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.75);
 }
 
 .e-mail,.message{
@@ -35,8 +36,8 @@ form{
 }
 
 .back-image{
-    background-image: url('../../../assets/images/salad-2068220_1920.jpg');
-
+    background-image: url('../../../assets/images/salad-2068220_1920.jpg');    
+    background-size: cover;
 }
 
 .main{
@@ -59,9 +60,7 @@ button{
 fieldset{
     margin: 5px 0px;
     width: 100%;
-    font-family: 'Crimson Text';
 }
-
 input{
     width: 100%;
     border: 3px solid black;
@@ -73,7 +72,6 @@ textarea{
     width: 100%;
     border: 3px solid black;
     border-radius: 10px;
-    font-family: sans-serif;
     resize: vertical;
     font-size: 17px;
 }

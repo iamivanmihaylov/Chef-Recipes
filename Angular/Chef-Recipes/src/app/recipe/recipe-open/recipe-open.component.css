@@ -20,129 +20,161 @@
 .aside {
   align-self: start;
   margin-left: 20px;
-  border-left: 2px solid black;
   padding-left: 20px;
   align-self: stretch;
 }
 
-.user .fa-user-circle{
-    font-size: 33px;
+.user .fa-user-circle {
+  font-size: 33px;
 }
 
-.user{
-    display: flex;
-    align-items: center;
+.user {
+  display: flex;
+  align-items: center;
 }
 
-.user-name{
-    margin-left: 5px;
-    font-size: 18px;
-    font-weight: 700;
+.user-name {
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
-.description{
-    margin-top: 15px;
-    height: 80px;
-    overflow-y: scroll;
+.description {
+  margin-top: 15px;
+  height: 90px;
+  overflow-y: scroll;
 }
 
-.menu{
-    display: flex;
-    margin-top: 10px;
-    font-size: 25px;
-    margin-bottom: 15px;
+.menu {
+  display: flex;
+  margin-top: 10px;
+  font-size: 25px;
+  margin-bottom: 15px;
 }
 
-.menu div{
-    margin: 0px 10px;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
+.menu div {
+  margin: 0px 10px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
 }
 
-.menu-ingredients,.menu-comments{
-    transition: all .5s ease;
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+.menu-ingredients,
+.menu-comments {
+  transition: all 0.5s ease;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
-
-.menu-ingredients:hover,.menu-comments:hover{
-    border-bottom: 3px solid black !important;
+.menu-ingredients:hover,
+.menu-comments:hover {
+  border-bottom: 3px solid black !important;
 }
 
-.desc-menu-hr{
-    border-color:black;
-    background-color: black;
-    margin: 20px 0px;
+.desc-menu-hr {
+  border-color: black;
+  background-color: black;
+  margin: 20px 0px;
 }
 
-.comment-user-info{
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    margin-bottom: 3px;
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 3px;
 }
 
-.comment-user-info i{
-    font-size: 25px;
+.comment-user-info i {
+  font-size: 25px;
 }
 
-.comment-user-info span{
-    margin-left: 5px;
+.comment-user-info span {
+  margin-left: 5px;
 }
 
-.comment{
-    margin: 20px 0;
+.comment {
+  margin: 20px 0;
 }
 
-.comment:nth-child(1){
-    margin-top: 0px;
+.comment:nth-child(1) {
+  margin-top: 0px;
 }
 
-
-.comments{
-    overflow-y: scroll;
-    height: 300px;
+.comments {
+  overflow-y: scroll;
+  height: 300px;
 }
 
-.menu-like{
-    transition: all .5s ease;
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+.menu-like {
+  transition: all 0.5s ease;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
-.menu-like:hover{
-    transform: scale(1.1,1.1);
-    color: rgba(237,0,53,1)
+.menu-like:hover {
+  transform: scale(1.1, 1.1);
+  color: rgba(237, 0, 53, 1);
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 7px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: black; 
-    border-radius: 10px;
-    
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(44, 44, 44); 
-  }
+  width: 7px;
+}
 
-  .comment-user-info{
-      margin-bottom: 10px;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(44, 44, 44);
+}
+
+.comment-user-info {
+  margin-bottom: 10px;
+}
+
+.ingredients {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+}
+
+.ingredient {
+  margin-top: 10px;
+  border-bottom: 2px solid black;
+  font-size: 18px;
+  width: 450px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.cook-button {
+  padding: 15px 15px;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 50px;
+  border: none;
+  background-color: royalblue;
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.ingredients ul {
+  overflow-y: scroll;
+  padding-right: 5px;
+  height: 300px;
+}

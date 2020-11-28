@@ -17,31 +17,42 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis
+        veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis
       </p>
     </div>
 
-    <hr class="desc-menu-hr">
+    <hr class="desc-menu-hr" />
 
     <div class="menu">
       <div class="menu-like">
         <i class="far fa-heart"></i>
       </div>
-      <div class="menu-ingredients">
+      <div (click)="showIngredientsHandler()" class="menu-ingredients">
         <i class="fas fa-utensil-spoon"></i>
       </div>
-      <div class="menu-comments">
+      <div (click)="showCommentsHandler()" class="menu-comments">
         <i class="far fa-comment-dots"></i>
       </div>
     </div>
 
-    <div class="comments">
+    <div *ngIf="showComments" class="comments">
+      <div class="comment">
+        <div class="comment-user-info">
+          <i class="far fa-user-circle"></i>
+          <span>@dani4356</span>
+        </div>
+        <div class="comment-description">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis
+          </p>
+        </div>
+      </div>
 
       <div class="comment">
         <div class="comment-user-info">
@@ -57,8 +68,6 @@
         </div>
       </div>
 
-     
-
       <div class="comment">
         <div class="comment-user-info">
           <i class="far fa-user-circle"></i>
@@ -72,21 +81,36 @@
           </p>
         </div>
       </div>
-      
+    </div>
 
-      <div class="comment">
-        <div class="comment-user-info">
-          <i class="far fa-user-circle"></i>
-          <span>@dani4356</span>
-        </div>
-        <div class="comment-description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis
-          </p>
-        </div>
-      </div>
+    <div *ngIf="showIngredients" class="ingredients">
+        <ul>
+          <li class="ingredient">
+            <span>Eggs</span>
+          </li>
+          <li class="ingredient">
+            <span>Butter</span>
+          </li>
+          <li class="ingredient">
+            <span>Cheese</span>
+          </li>
+          <li class="ingredient">
+            <span>Salt</span>
+          </li>
+          <li class="ingredient">
+            <span>Pepper</span>
+          </li>
+          <li class="ingredient">
+            <span>Tomatoes</span>
+          </li>
+          <li class="ingredient">
+            <span>Carrot</span>
+          </li>
+          <li class="ingredient">
+            <span>Bread</span>
+          </li>
+        </ul>
+        <button class="cook-button">Start Cooking</button>
     </div>
   </div>
 </div>
