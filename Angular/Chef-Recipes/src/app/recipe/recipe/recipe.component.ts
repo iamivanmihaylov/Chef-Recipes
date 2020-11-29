@@ -12,7 +12,7 @@ export class RecipeComponent implements OnInit {
   isLiked = false
 
   likeHandler(){
-    this.isLiked = true
+    this.isLiked = !this.isLiked
   }
 
   constructor() { }

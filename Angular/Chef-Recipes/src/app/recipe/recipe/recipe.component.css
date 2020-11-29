@@ -56,7 +56,6 @@
     cursor: pointer;
 }
 
-.fa-comment:hover,
 .fa-user-circle:hover,
 .title:hover,
 .user-info span:hover{
@@ -69,7 +68,6 @@
     cursor: pointer;
 }
 
-.fa-comment,
 .fa-heart,
 .fa-user-circle,
 .title,

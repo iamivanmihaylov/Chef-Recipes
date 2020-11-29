@@ -4,6 +4,8 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeOpenComponent } from './recipe-open/recipe-open.component';
 import { RouterModule } from '@angular/router';
+import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     RecipeComponent,
     RecipeListComponent,
-    RecipeOpenComponent
+    RecipeOpenComponent,
+    RecipeCreateComponent
   ],
   imports: [
     CommonModule,
