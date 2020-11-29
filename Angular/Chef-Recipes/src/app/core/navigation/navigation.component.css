@@ -44,6 +44,8 @@
     transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0s;
+    outline: none;
+    cursor: pointer;
 }
 
 .list-item:hover{
@@ -76,3 +78,7 @@
     margin: 0px 20px;
 }
 
+.active{
+    border-top: 3px solid black !important; 
+    outline: none;
+}

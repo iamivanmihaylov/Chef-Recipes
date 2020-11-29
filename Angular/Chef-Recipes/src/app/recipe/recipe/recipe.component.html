@@ -10,7 +10,7 @@
         </div>
         <div class="likes-comments">
             <div class="likes">
-                <i class="far fa-heart"></i>
+                <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
                 <span>10k</span>
             </div>
             <div class="comments">

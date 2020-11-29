@@ -6,14 +6,19 @@
       </div>
     </a>
     <ul class="main-navigation-list">
-      <li class="list-item">
-        <a routerLink="/">Recipes</a>
+      <li
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="list-item"
+      >
+        <a>Recipes</a>
       </li>
-      <li class="list-item">
-        <a routerLink="/about">About</a>
+      <li routerLink="/about" routerLinkActive="active" class="list-item">
+        <a>About</a>
       </li>
-      <li class="list-item">
-        <a routerLink="/contact">Contact us</a>
+      <li routerLink="/contact" routerLinkActive="active" class="list-item">
+        <a>Contact us</a>
       </li>
     </ul>
 

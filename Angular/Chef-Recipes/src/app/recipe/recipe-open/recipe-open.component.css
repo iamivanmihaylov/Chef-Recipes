@@ -178,3 +178,7 @@
   padding-right: 5px;
   height: 300px;
 }
+
+.is-liked{
+  color: rgba(237, 0, 53, 1);
+}

@@ -29,12 +29,12 @@
 
     <div class="menu">
       <div class="menu-like">
-        <i class="far fa-heart"></i>
+        <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
       </div>
-      <div (click)="showIngredientsHandler()" class="menu-ingredients">
+      <div (click)="showIngredientsHandler()" #menuIngredients class="menu-ingredients">
         <i class="fas fa-utensil-spoon"></i>
       </div>
-      <div (click)="showCommentsHandler()" class="menu-comments">
+      <div (click)="showCommentsHandler()" #menuComments class="menu-comments">
         <i class="far fa-comment-dots"></i>
       </div>
     </div>

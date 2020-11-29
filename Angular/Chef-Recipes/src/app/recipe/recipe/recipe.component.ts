@@ -9,6 +9,12 @@ export class RecipeComponent implements OnInit {
 
   @Input() recipe;
 
+  isLiked = false
+
+  likeHandler(){
+    this.isLiked = true
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -130,3 +130,7 @@
     white-space: nowrap;
     z-index: 1;
 }
+
+.is-liked{
+    color: rgba(237, 0, 53, 1);
+  }

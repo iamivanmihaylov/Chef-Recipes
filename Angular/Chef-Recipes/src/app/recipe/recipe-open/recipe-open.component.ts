@@ -1,42 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-open',
   templateUrl: './recipe-open.component.html',
   styleUrls: ['./recipe-open.component.css']
 })
-export class RecipeOpenComponent implements OnInit {
+export class RecipeOpenComponent implements AfterViewInit {
 
   showComments:boolean = false;
   showIngredients:boolean = true;
 
-  constructor() { }
+  isLiked:boolean = false;
 
-  ngOnInit(): void {
-    this.addBottomBorder("menu-ingredients","3px","black");
+  @ViewChild("menuIngredients") menuIngredients: ElementRef;
+  @ViewChild("menuComments") menuComments: ElementRef;
+
+  constructor(private renderer: Renderer2) { }
+
+  ngAfterViewInit(): void {
+    this.addBottomBorder(this.menuIngredients);
   }
 
   showIngredientsHandler():void{
-    this.addBottomBorder("menu-ingredients","3px","black");
-    this.removeBottomBorder("menu-comments","3px");
+    this.addBottomBorder(this.menuIngredients);
+    this.removeBottomBorder(this.menuComments);
     this.showIngredients = true;
     this.showComments = false;
   }
 
   showCommentsHandler():void{
-    this.addBottomBorder("menu-comments","3px","black");
-    this.removeBottomBorder("menu-ingredients","3px");
+    this.addBottomBorder(this.menuComments);
+    this.removeBottomBorder(this.menuIngredients);
     this.showIngredients = false;
     this.showComments = true;
   }
 
-  addBottomBorder(elementClassName:string,width:string,color:string):void{
-    let element:HTMLElement = document.getElementsByClassName(elementClassName)[0] as HTMLElement;
-    element.style.borderBottom = `${width} solid ${color}`
+  addBottomBorder(element:ElementRef):void{
+    this.renderer.setStyle(
+      element.nativeElement,
+      'border-bottom',
+      '3px solid black'
+    )
   }
 
-  removeBottomBorder(elementClassName:string,width:string):void{
-    let element:HTMLElement = document.getElementsByClassName(elementClassName)[0] as HTMLElement;
-    element.style.borderBottom = `${width} solid transparent`
+  removeBottomBorder(element:ElementRef):void{
+    this.renderer.setStyle(
+      element.nativeElement,
+      'border-bottom',
+      '3px solid transparent'
+    )
+  }
+
+  likeHandler(){
+    this.isLiked = !this.isLiked;
   }
 }
