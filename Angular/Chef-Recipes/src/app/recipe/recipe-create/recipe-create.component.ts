@@ -13,6 +13,7 @@ export class RecipeCreateComponent implements OnInit {
     amount:0,
   }]
 
+  imageURL:string = "https://image.flaticon.com/icons/png/512/36/36601.png" ;
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,15 @@ export class RecipeCreateComponent implements OnInit {
       ingredientName: '',
       amount: 0
     })
+  }
+
+  changePhoto(imageURL:HTMLInputElement){
+    if(imageURL.value.trim() === ""){
+      this.imageURL = "https://image.flaticon.com/icons/png/512/36/36601.png"
+      return
+    }
+    this.imageURL= imageURL.value;
+    
   }
 
   removeRecipe(i:number){

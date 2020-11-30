@@ -2,19 +2,22 @@
   <div class="main">
     <div class="img-wrapper">
       <div class="image">
-        <img src="../../../assets/images/pexels-jer-chung-2059153.jpg" alt="" />
+        <img [src]="imageURL" alt="" />
       </div>
     </div>
     <div class="aside">
-      <div class="description">
+      <div class="field description">
         <label for="">Description</label>
         <textarea name="" id="" cols="30" rows="10"></textarea>
       </div>
-      <div class="image-url">
+      <div class="field image-url">
         <label for="">Image URL</label>
-        <input type="text" name="" id="" />
+        <div class="image-inputs">
+          <input (keyup)="changePhoto(imgURL)" #imgURL type="text" name="" id="" />
+        </div>
+        
       </div>
-      <div class="control-menu">
+      <div class="field control-menu">
         <button type="button" (click)="addRecipe()">
           Add Ingredient <i class="fas fa-plus"></i>
         </button>
@@ -38,6 +41,8 @@
               <option value="">g</option>
               <option value="">kg</option>
               <option value="">l</option>
+              <option value="">Number</option>
+              <option value="">Other</option>
             </select>
             <div class="remove-btn">
               <button type="button" (click)="removeRecipe(i)">

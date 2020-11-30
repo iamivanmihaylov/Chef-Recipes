@@ -54,11 +54,26 @@
 }
 
 .create-recipe-button{
-  margin-right: 285px;
-  padding: 18px 26px;
-  background: radial-gradient(circle, rgba(52,231,51,1) 0%, rgba(55,201,54,1) 100%);
+  margin-right: 275px;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.create-recipe-button{
+  display: flex;
+  align-items: center;
+}
+
+
+.create-recipe-button i{
+  margin-left: 10px;
+  color: white;
+}
+
+.create-recipe-button a{
+  padding: 18px 26px;
+  background: radial-gradient(circle, rgba(52,231,51,1) 0%, rgba(55,201,54,1) 100%);
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
@@ -67,8 +82,4 @@
 .create-recipe-button a{
   color: white;
   margin-right: 10px;
-}
-
-.create-recipe-button i{
-  color: white;
 }

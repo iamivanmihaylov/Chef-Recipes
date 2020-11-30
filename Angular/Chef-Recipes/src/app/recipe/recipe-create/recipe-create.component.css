@@ -52,16 +52,20 @@
 }
 
 .submit-button {
-  background-color: seagreen;
+  background: radial-gradient(circle, rgba(52,231,51,1) 0%, rgba(55,201,54,1) 100%);
   border: none;
   color: white;
   font-size: 17px;
+  padding: 16px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .align {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 380px
 }
 
 .ingredients {
@@ -124,5 +128,45 @@ input::-webkit-inner-spin-button {
 }
 
 .image-url input{
-  
+  border: 2px solid black;  
+  margin: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 15px;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.description textarea{
+  margin: 10px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.control-menu button{
+  padding: 10px 10px;
+  background-color: rgb(233, 199, 49);
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 10px;
+
+}
+
+.image-inputs{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.image-inputs input{
+  width: 100%;
+}
+
+.image-inputs button{
+  height: fit-content;
+  padding: 5px 10px;
 }
