@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Chef-Recipes"
+  "defaultProject": "Chef-Recipes",
+  "cli": {
+    "analytics": false
+  }
 }
