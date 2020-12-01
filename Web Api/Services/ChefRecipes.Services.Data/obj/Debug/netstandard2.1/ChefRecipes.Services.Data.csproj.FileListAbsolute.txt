@@ -1,0 +1,16 @@
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Services.Data.deps.json
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Services.Data.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Services.Data.pdb
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Data.Common.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Data.Models.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Services.Mapping.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Data.Common.pdb
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Data.Models.pdb
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\bin\Debug\netstandard2.1\ChefRecipes.Services.Mapping.pdb
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.csprojAssemblyReference.cache
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.AssemblyInfoInputs.cache
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.AssemblyInfo.cs
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.csproj.CoreCompileInputs.cache
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.csproj.CopyComplete
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Services\ChefRecipes.Services.Data\obj\Debug\netstandard2.1\ChefRecipes.Services.Data.pdb

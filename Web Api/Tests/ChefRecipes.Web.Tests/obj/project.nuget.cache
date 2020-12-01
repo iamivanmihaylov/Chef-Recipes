@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ckJ2/j7dyuIEcG0oae7Xdj/AoxA2yn5+QkcoPu2aqpqk+NHywxTWGQSgV169zfLc0h4UdPncrjNLkzGNvM3iUA==",
+  "dgSpecHash": "BrgPSRHSJkaoC+Ih9X5qkFDjTCLwuR/xixgfJpMUPUn8XzrgdhF0a9GcRfa+QCXee5yO16uHePeVlEKVnpw6bA==",
   "success": true,
   "projectFilePath": "D:\\Programming\\Project Repos\\Chef-Recipes\\Web Api\\Tests\\ChefRecipes.Web.Tests\\ChefRecipes.Web.Tests.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,6 @@
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.0\\microsoft.aspnetcore.identity.ui.5.0.0.nupkg.sha512",
-    "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.0\\microsoft.aspnetcore.mvc.razor.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.0\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.0.nupkg.sha512",
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\5.0.0\\microsoft.aspnetcore.mvc.testing.5.0.0.nupkg.sha512",
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\UserE1\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
