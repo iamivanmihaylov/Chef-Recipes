@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DV/3vGihIGyHMYrsInHgbfEgnPYF5YjW1nglkbPAB8YMUZov/BTKUjFv7+WLYVEuYoT8Bb6Wqzt3+dMW6QW1Nw==",
+  "success": true,
+  "projectFilePath": "D:\\Programming\\Project Repos\\Chef-Recipes\\Web Api\\Data\\ChefRecipes.Data.Common\\ChefRecipes.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UserE1\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.261\\stylecop.analyzers.1.2.0-beta.261.nupkg.sha512",
+    "C:\\Users\\UserE1\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.261\\stylecop.analyzers.unstable.1.2.0.261.nupkg.sha512",
+    "C:\\Users\\UserE1\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

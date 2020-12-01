@@ -50,6 +50,7 @@
     width: 350px;
     height: 305px;
     position: relative;
+    outline: none;
 }
 
 .image:hover{
