@@ -60,4 +60,8 @@ export class RecipeOpenComponent implements AfterViewInit {
   toggleAddComment(){
     this.showAddComment = !this.showAddComment;
   }
+
+  closeComment(){
+    this.showAddComment = false;
+  }
 }

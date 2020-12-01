@@ -13,7 +13,9 @@ export class RecipeCreateComponent implements OnInit {
     amount:0,
   }]
 
-  imageURL:string = "https://image.flaticon.com/icons/png/512/36/36601.png" ;
+  defaultImage:string = "../../../assets/images/no-image.png";
+  imageURL:string = this.defaultImage ;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -29,7 +31,7 @@ export class RecipeCreateComponent implements OnInit {
 
   changePhoto(imageURL:HTMLInputElement){
     if(imageURL.value.trim() === ""){
-      this.imageURL = "https://image.flaticon.com/icons/png/512/36/36601.png"
+      this.imageURL = this.defaultImage
       return
     }
     this.imageURL= imageURL.value;

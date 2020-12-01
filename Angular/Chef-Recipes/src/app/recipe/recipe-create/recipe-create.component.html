@@ -23,26 +23,29 @@
         </button>
       </div>
       <div class="align">
+        <div>
+          <span>Ingredients</span>
+        </div>
         <div class="ingredients">
           <div class="ingredient" *ngFor="let recipe of recipes; let i = index">
             <input class="ingredient-name" type="text" maxlength="10" placeholder="Ingredient" name="ingredient_{{ recipe.id }}" id="" />
             <input class="ingredient-amount" min="0" max="99999" type="number" placeholder="Amount" name="time_{{ recipe.id }}" id="" />
             <select name="" id="">
-              <option value="">Tbsp</option>
-              <option value="">tsp</option>
-              <option value="">Oz</option>
-              <option value="">fl. Oz</option>
-              <option value="">c</option>
-              <option value="">qt</option>
-              <option value="">pt</option>
-              <option value="">gal</option>
-              <option value="">lb</option>
-              <option value="">mL</option>
-              <option value="">g</option>
-              <option value="">kg</option>
-              <option value="">l</option>
-              <option value="">Number</option>
-              <option value="">Other</option>
+              <option value="Tbsp">Tbsp</option>
+              <option value="tsp">tsp</option>
+              <option value="Oz">Oz</option>
+              <option value="fl. Oz">fl. Oz</option>
+              <option value="c">c</option>
+              <option value="qt">qt</option>
+              <option value="pt">pt</option>
+              <option value="gal">gal</option>
+              <option value="lb">lb</option>
+              <option value="mL">mL</option>
+              <option value="g">g</option>
+              <option value="kg">kg</option>
+              <option value="l">l</option>
+              <option value="Number">Number</option>
+              <option value="Other">Other</option>
             </select>
             <div class="remove-btn">
               <button type="button" (click)="removeRecipe(i)">

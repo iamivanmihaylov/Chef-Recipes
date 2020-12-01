@@ -199,10 +199,25 @@
 
 .write-comment button{
   border: none;
-  background-color: black;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
-  align-self: flex-end;
   margin-top: 10px;
+}
+
+.add-comment-buttons{
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+.add-comment-buttons button{
+  margin-left: 10px;
+}
+
+.add-btn{
+  background: radial-gradient(circle, rgba(52,231,51,1) 0%, rgba(55,201,54,1) 100%) !important;
+}
+
+.cancel-btn{
+  background: red;
 }

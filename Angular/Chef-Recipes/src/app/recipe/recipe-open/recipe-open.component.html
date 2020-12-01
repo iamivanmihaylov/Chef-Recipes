@@ -45,7 +45,12 @@
       <div (click)="showCommentsHandler()" #menuComments class="menu-comments">
         <i class="far fa-comment-dots"></i>
       </div>
-      <div *ngIf="showComments" (click)="toggleAddComment()" #menuAddComment class="menu-add-comment">
+      <div
+        *ngIf="showComments"
+        (click)="toggleAddComment()"
+        #menuAddComment
+        class="menu-add-comment"
+      >
         <i class="fas fa-plus"></i>
       </div>
     </div>
@@ -54,7 +59,10 @@
       <div *ngIf="showAddComment" class="write-comment">
         <span>Add Comment</span>
         <textarea name="" id="" cols="30" rows="7"></textarea>
-        <button>Add</button>
+        <div class="add-comment-buttons">
+          <button class="add-btn">Add</button>
+          <button class="cancel-btn" (click)="closeComment()">Cancel</button>
+        </div>
       </div>
       <div class="comment">
         <div class="comment-user-info">
