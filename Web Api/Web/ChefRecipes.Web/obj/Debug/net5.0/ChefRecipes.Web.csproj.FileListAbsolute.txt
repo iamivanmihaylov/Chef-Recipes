@@ -174,3 +174,7 @@ D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\obj\Debug\
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\obj\Debug\net5.0\ref\ChefRecipes.Web.dll
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\obj\Debug\net5.0\ChefRecipes.Web.pdb
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\obj\Debug\net5.0\ChefRecipes.Web.genruntimeconfig.cache
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll

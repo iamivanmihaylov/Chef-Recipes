@@ -42,6 +42,8 @@
 
             services.AddControllers();
 
+            services.AddSwaggerGen();
+
             services.AddSingleton(this.configuration);
 
             // Data repositories
@@ -72,6 +74,13 @@
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My app");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
