@@ -29,17 +29,33 @@
 
     <div class="menu">
       <div class="menu-like">
-        <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
+        <i
+          (click)="likeHandler()"
+          [ngClass]="{ 'fas is-liked': isLiked }"
+          class="far fa-heart"
+        ></i>
       </div>
-      <div (click)="showIngredientsHandler()" #menuIngredients class="menu-ingredients">
+      <div
+        (click)="showIngredientsHandler()"
+        #menuIngredients
+        class="menu-ingredients"
+      >
         <i class="fas fa-utensil-spoon"></i>
       </div>
       <div (click)="showCommentsHandler()" #menuComments class="menu-comments">
         <i class="far fa-comment-dots"></i>
       </div>
+      <div *ngIf="showComments" (click)="toggleAddComment()" #menuAddComment class="menu-add-comment">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
 
     <div *ngIf="showComments" class="comments">
+      <div *ngIf="showAddComment" class="write-comment">
+        <span>Add Comment</span>
+        <textarea name="" id="" cols="30" rows="7"></textarea>
+        <button>Add</button>
+      </div>
       <div class="comment">
         <div class="comment-user-info">
           <i class="far fa-user-circle"></i>
@@ -84,33 +100,33 @@
     </div>
 
     <div *ngIf="showIngredients" class="ingredients">
-        <ul>
-          <li class="ingredient">
-            <span>Eggs</span>
-          </li>
-          <li class="ingredient">
-            <span>Butter</span>
-          </li>
-          <li class="ingredient">
-            <span>Cheese</span>
-          </li>
-          <li class="ingredient">
-            <span>Salt</span>
-          </li>
-          <li class="ingredient">
-            <span>Pepper</span>
-          </li>
-          <li class="ingredient">
-            <span>Tomatoes</span>
-          </li>
-          <li class="ingredient">
-            <span>Carrot</span>
-          </li>
-          <li class="ingredient">
-            <span>Bread</span>
-          </li>
-        </ul>
-        <button class="cook-button">Start Cooking</button>
+      <ul>
+        <li class="ingredient">
+          <span>Eggs</span>
+        </li>
+        <li class="ingredient">
+          <span>Butter</span>
+        </li>
+        <li class="ingredient">
+          <span>Cheese</span>
+        </li>
+        <li class="ingredient">
+          <span>Salt</span>
+        </li>
+        <li class="ingredient">
+          <span>Pepper</span>
+        </li>
+        <li class="ingredient">
+          <span>Tomatoes</span>
+        </li>
+        <li class="ingredient">
+          <span>Carrot</span>
+        </li>
+        <li class="ingredient">
+          <span>Bread</span>
+        </li>
+      </ul>
+      <button class="cook-button">Start Cooking</button>
     </div>
   </div>
 </div>

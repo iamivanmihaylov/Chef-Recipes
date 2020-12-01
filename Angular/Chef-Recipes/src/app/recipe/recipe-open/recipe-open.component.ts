@@ -9,11 +9,13 @@ export class RecipeOpenComponent implements AfterViewInit {
 
   showComments:boolean = false;
   showIngredients:boolean = true;
+  showAddComment:boolean = false;
 
   isLiked:boolean = false;
 
   @ViewChild("menuIngredients") menuIngredients: ElementRef;
   @ViewChild("menuComments") menuComments: ElementRef;
+  @ViewChild("menuAddComment") menuAddComment: ElementRef;
 
   constructor(private renderer: Renderer2) { }
 
@@ -53,5 +55,9 @@ export class RecipeOpenComponent implements AfterViewInit {
 
   likeHandler(){
     this.isLiked = !this.isLiked;
+  }
+
+  toggleAddComment(){
+    this.showAddComment = !this.showAddComment;
   }
 }

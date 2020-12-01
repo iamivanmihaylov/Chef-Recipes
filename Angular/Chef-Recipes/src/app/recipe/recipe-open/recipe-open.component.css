@@ -182,3 +182,27 @@
 .is-liked{
   color: rgba(237, 0, 53, 1);
 }
+
+.write-comment textarea{
+  width: 100%;
+  resize: none;
+  border: 2px solid black;
+  margin-top: 5px;
+}
+
+.write-comment {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.write-comment button{
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  align-self: flex-end;
+  margin-top: 10px;
+}
