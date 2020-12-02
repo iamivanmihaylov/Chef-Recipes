@@ -178,3 +178,4 @@ D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Programming\Project Repos\Chef-Recipes\Web Api\Web\ChefRecipes.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
