@@ -1,20 +1,21 @@
-﻿using ChefRecipes.Data.Models;
-using ChefRecipes.Web.ViewModels.Identity;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Net;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChefRecipes.Web.Controllers
+﻿namespace ChefRecipes.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Linq;
+    using System.Net;
+    using System.Security.Claims;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using ChefRecipes.Data.Models;
+    using ChefRecipes.Web.ViewModels.Identity;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Options;
+    using Microsoft.IdentityModel.Tokens;
+
     public class IdentityController : BaseController
     {
         private readonly UserManager<ApplicationUser> userManager;

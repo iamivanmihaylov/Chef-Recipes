@@ -2,6 +2,7 @@
 {
     using System.Reflection;
     using System.Text;
+
     using ChefRecipes.Data;
     using ChefRecipes.Data.Common;
     using ChefRecipes.Data.Common.Repositories;
@@ -50,7 +51,6 @@
 
             services.AddControllers();
 
-
             var applicationSettingsConfiguration = this.configuration.GetSection("ApplicationSettings");
             services.Configure<AppSettings>(applicationSettingsConfiguration);
 
@@ -72,7 +72,6 @@
                         IssuerSigningKey = new SymmetricSecurityKey(key),
                         ValidateIssuer = false,
                         ValidateAudience = false,
-
                     };
                 });
 
