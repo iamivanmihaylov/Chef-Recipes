@@ -1,0 +1,38 @@
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+.next,.back{
+    color: white;
+    background-color: black;
+    padding: 16px 28px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+button span{
+    margin: 0 10px;
+}
+
+button{
+    display: flex;
+    align-items: center;
+}
+
+.next:hover,.back:hover{
+    background-color: rgb(19, 19, 19);
+    
+}
+
+.next:disabled,.back:disabled{
+    background-color: rgb(34, 34, 34);
+    cursor: not-allowed;
+}
+
+.left{
+    transform: rotate(180deg);
+}

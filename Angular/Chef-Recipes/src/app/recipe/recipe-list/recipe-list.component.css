@@ -2,5 +2,5 @@ div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0px 50px 100px;
+    margin: 0px 50px 20px;
 }

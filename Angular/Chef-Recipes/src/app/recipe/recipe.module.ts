@@ -6,6 +6,8 @@ import { RecipeOpenComponent } from './recipe-open/recipe-open.component';
 import { RouterModule } from '@angular/router';
 import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './pagination/pagination.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 
@@ -14,14 +16,17 @@ import { FormsModule } from '@angular/forms';
     RecipeComponent,
     RecipeListComponent,
     RecipeOpenComponent,
-    RecipeCreateComponent
+    RecipeCreateComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    EditorModule
   ],
   exports:[
-    RecipeListComponent
+    RecipeListComponent,
+    PaginationComponent
   ]
 })
 export class RecipeModule { }

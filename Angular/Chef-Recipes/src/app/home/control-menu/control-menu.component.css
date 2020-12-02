@@ -1,6 +1,6 @@
 .main-control-menu {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 40px;
   padding-right: 200px;
   align-items: center;
@@ -54,7 +54,6 @@
 }
 
 .create-recipe-button{
-  margin-right: 275px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +62,7 @@
 .create-recipe-button{
   display: flex;
   align-items: center;
+  margin-left: 155px;
 }
 
 
@@ -81,5 +81,4 @@
 
 .create-recipe-button a{
   color: white;
-  margin-right: 10px;
 }

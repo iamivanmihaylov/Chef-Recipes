@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-
+import { tinyMceApiKey } from '../../../environments/environment.prod'
+ 
 @Component({
   selector: 'app-recipe-open',
   templateUrl: './recipe-open.component.html',
@@ -10,6 +11,16 @@ export class RecipeOpenComponent implements AfterViewInit {
   showComments:boolean = false;
   showIngredients:boolean = true;
   showAddComment:boolean = false;
+
+  tinyMceKey:string = tinyMceApiKey
+
+  tinyMceSettings:Object = {
+    plugins:'emoticons',
+    toolbar:'emoticons',
+    toolbar_location:'bottom',
+    menubar: false,
+    resize: false
+  }
 
   isLiked:boolean = false;
 

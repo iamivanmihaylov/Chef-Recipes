@@ -221,3 +221,7 @@
 .cancel-btn{
   background: red;
 }
+
+editor{
+  user-select: none;
+}

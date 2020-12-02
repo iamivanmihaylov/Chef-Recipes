@@ -16,7 +16,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
   imports: [
     CommonModule,
     RouterModule,
-    RecipeModule
+    RecipeModule,
   ],
   exports:[
     HomePageComponent
