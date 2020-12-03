@@ -8,6 +8,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { RouterModule } from '@angular/router';
 import { RecipeModule } from '../recipe/recipe.module';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,6 +18,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
     CommonModule,
     RouterModule,
     RecipeModule,
+    SharedModule
   ],
   exports:[
     HomePageComponent

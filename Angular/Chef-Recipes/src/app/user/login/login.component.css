@@ -82,3 +82,8 @@ input{
 i{
     font-size: 18px;
 }
+
+.error-required{
+    margin: 0 !important;
+    color: red;
+}

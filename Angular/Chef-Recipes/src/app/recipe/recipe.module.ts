@@ -6,8 +6,8 @@ import { RecipeOpenComponent } from './recipe-open/recipe-open.component';
 import { RouterModule } from '@angular/router';
 import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
 import { FormsModule } from '@angular/forms';
-import { PaginationComponent } from './pagination/pagination.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,16 +17,15 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     RecipeListComponent,
     RecipeOpenComponent,
     RecipeCreateComponent,
-    PaginationComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    EditorModule
+    EditorModule,
+    SharedModule
   ],
   exports:[
     RecipeListComponent,
-    PaginationComponent
   ]
 })
 export class RecipeModule { }

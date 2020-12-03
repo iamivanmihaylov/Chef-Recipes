@@ -60,3 +60,12 @@ button{
 .chef-message{
   user-select: none;
 }
+
+app-error{
+  margin: 0 !important;
+}
+
+.disable:disabled{
+  background-color: rgb(34, 34, 34);
+  cursor: not-allowed;
+}

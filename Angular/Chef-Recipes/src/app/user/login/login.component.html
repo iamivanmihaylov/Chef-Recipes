@@ -3,16 +3,19 @@
         <div class="title">
             <span>LOGIN</span>
         </div>
-        <form action="">
+        <form #f="ngForm" (ngSubmit)="loginHandler(f.value)">
             <div class="username">
-                <i class="fas fa-envelope"></i>
-                <input placeholder="E-Mail" type="email" name="" id="">
+                <i class="fas fa-user"></i>
+                <input #usernameInput="ngModel" placeholder="Username" type="text" name="username" id="username" ngModel required>
             </div>
+            <app-error *ngIf="usernameInput.touched && usernameInput.errors?.required">Username is required!</app-error>
             <div class="password">
                 <i class="fas fa-lock"></i>
-                <input placeholder="Password" type="password" name="" id="">
+                <input #passwordInput="ngModel"  placeholder="Password" type="password" name="password" id="password" ngModel required>
             </div>
-            <button type="submit">
+            <div class="error-required" *ngIf="passwordInput.touched && passwordInput.errors?.required"></div>
+            <app-error *ngIf="passwordInput.touched && passwordInput.errors?.required">Password is required!</app-error>
+            <button class="disable" [disabled]="f.invalid" type="submit">
                 Login
             </button>
         </form>

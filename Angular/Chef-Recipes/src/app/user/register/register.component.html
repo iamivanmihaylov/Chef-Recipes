@@ -3,25 +3,30 @@
         <div class="title">
             <span>REGISTER</span>
         </div>
-        <form action="">
+        <form #f="ngForm" (ngSubmit)="registerHandler(f.value)">
             <div class="username">
                 <i class="fas fa-user"></i>
-                <input placeholder="Username" type="text" name="" id="">
+                <input #usernameInput="ngModel" placeholder="Username" type="text" name="username" id="username" ngModel required>
             </div>
+            <app-error *ngIf="usernameInput.touched&&usernameInput.errors?.required">Username is required!</app-error>
             <div class="email">
                 <i class="fas fa-envelope"></i>
-                <input placeholder="E-mail" type="text" name="" id="">
+                <input #emailInput="ngModel" placeholder="E-mail" type="text" name="email" id="email" ngModel required>
             </div>
+            <app-error *ngIf="emailInput.touched&&emailInput.errors?.required">E-mail is required!</app-error>
             <div class="password">
                 <i class="fas fa-key"></i>
-                <input placeholder="Password" type="password" name="" id="">
+                <input #passwordInput="ngModel" placeholder="Password" type="password" name="password" id="password" ngModel required>
             </div>
+            <app-error *ngIf="passwordInput.touched&&passwordInput.errors?.required">Password is required!</app-error>
             <div class="confirm-password">
                 <i class="fas fa-key"></i>
-                <input placeholder="Confirm Password" type="password" name="" id="">
+                <input #confirmPasswordInput="ngModel" placeholder="Confirm Password" type="password" name="confirmPassword" id="confirmPassword" ngModel required>
             </div>
-            <button type="submit">
-                Register 
+            <app-error *ngIf="confirmPasswordInput.touched&&confirmPasswordInput.errors?.required">Confirm Password is required!</app-error>
+            <app-error *ngIf="confirmPasswordInput.touched&&passwordInput.value!=confirmPasswordInput.value">Passwords do not match!</app-error>
+            <button class="disable" [disabled]="f.invalid" type="submit">
+                Register
             </button>
         </form>
     </div>
