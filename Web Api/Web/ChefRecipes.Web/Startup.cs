@@ -47,7 +47,7 @@
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
             })
-                .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllers();
 
