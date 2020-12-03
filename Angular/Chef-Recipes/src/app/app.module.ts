@@ -8,6 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { RecipeModule } from './recipe/recipe.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user/services/user.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { RecipeModule } from './recipe/recipe.module';
     SharedModule,
     HomeModule,
     UserModule,
-    RecipeModule
+    RecipeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

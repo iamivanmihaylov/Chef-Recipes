@@ -3,10 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 const tinyMceApiKey = ""
+const apiUrl = "https://localhost:44319/"
 
 export const environment = {
   production: false,
-  tinyMceApiKey
+  tinyMceApiKey,
+  apiUrl
 };
 
 /*

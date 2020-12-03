@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,15 @@ import { Form } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }
 
   loginHandler(formData){
-    console.log(formData);
+    this.userService.login(formData).subscribe( data => {
+      this.userService.saveToken(data["token"]);
+    });
   }
 
 }

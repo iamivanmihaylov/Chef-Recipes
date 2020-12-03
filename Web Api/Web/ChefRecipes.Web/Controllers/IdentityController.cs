@@ -47,7 +47,7 @@
         }
 
         [Route(nameof(Login))]
-        public async Task<ActionResult<string>> Login(LoginUser model)
+        public async Task<ActionResult<object>> Login(LoginUser model)
         {
             var user = await this.userManager.FindByNameAsync(model.Username);
 
@@ -77,7 +77,10 @@
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var encryptedToken = tokenHandler.WriteToken(token);
 
-            return encryptedToken;
+            return new
+            {
+                Token = encryptedToken,
+            };
         }
     }
 }
