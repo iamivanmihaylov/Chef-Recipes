@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { tinyMceApiKey } from '../../../environments/environment.prod'
+import { environment } from '../../../environments/environment'
  
 @Component({
   selector: 'app-recipe-open',
@@ -12,7 +12,7 @@ export class RecipeOpenComponent implements AfterViewInit {
   showIngredients:boolean = true;
   showAddComment:boolean = false;
 
-  tinyMceKey:string = tinyMceApiKey
+  tinyMceKey:string = environment.tinyMceApiKey;
 
   tinyMceSettings:Object = {
     plugins:'emoticons',
