@@ -1,4 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { interval } from 'rxjs';
 import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
@@ -9,8 +10,12 @@ import { UserService } from 'src/app/user/services/user.service';
 export class NavigationComponent implements OnInit {
   constructor(private userService:UserService) { }
 
-  isAuthenticated:boolean = this.userService.isAuthenticated();
+  isAuthenticated:boolean = this.userService.isLogged;
   ngOnInit(): void {
+  }
+
+  ngDoCheck():void{
+    this.isAuthenticated = this.userService.isLogged;
   }
 
   logoutHandler(){

@@ -1,3 +1,3 @@
 export interface IToken{
-    tokenData:string
+    token:string
 }
