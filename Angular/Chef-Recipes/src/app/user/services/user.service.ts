@@ -10,6 +10,8 @@ export class UserService {
 
   private loginPath = environment.apiUrl + "identity/login";
   private registerPath = environment.apiUrl + "identity/register";
+  private tokenName = "token"
+  private isLogged:boolean = false;
 
   constructor(private http:HttpClient) { }
 
@@ -18,15 +20,32 @@ export class UserService {
   }
 
   register(data): Observable<any>{
-    return this.http.post(this.registerPath,data)
+    return this.http.post(this.registerPath,data);
   }
 
   getToken(){
-    return localStorage.getItem("token")
+    return localStorage.getItem("token");
   }
 
   saveToken(token){
-    localStorage.setItem("token",token)
+    localStorage.setItem("token",token);
   }
 
+  isAuthenticated() : boolean{
+    const hasToken:string = window.localStorage.getItem(this.tokenName);
+
+    if (hasToken == null){
+      this.isLogged = false;
+    }else{
+      this.isLogged = true;
+    }
+    
+    console.log(this.isLogged);
+
+    return this.isLogged;
+  }
+
+  logout(){
+    window.localStorage.removeItem(this.tokenName)
+  }
 }
