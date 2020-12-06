@@ -12,6 +12,10 @@ export class ControlMenuComponent implements OnInit {
     return this.userService.isLogged
   } 
 
+  get currUser(){
+    return this.userService.user.userName;
+  }
+
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {

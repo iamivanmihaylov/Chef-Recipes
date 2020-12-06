@@ -11,6 +11,7 @@
 
     using ChefRecipes.Data.Models;
     using ChefRecipes.Web.ViewModels.Identity;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Options;
@@ -69,7 +70,9 @@
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                   new Claim(ClaimTypes.Name, user.Id.ToString()),
+                   new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                   new Claim(ClaimTypes.Name, user.UserName),
+                   new Claim(ClaimTypes.Email, user.Email),
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
@@ -81,6 +84,24 @@
             {
                 Token = encryptedToken,
             };
+        }
+
+        [Authorize]
+        [Route(nameof(CurrentUser))]
+        public IActionResult CurrentUser()
+        {
+            var userName = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var userEmail = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+            var user = new
+            {
+                UserName = userName,
+                UserEmail = userEmail,
+                UserId = userId,
+            };
+
+            return this.Ok(user);
         }
     }
 }

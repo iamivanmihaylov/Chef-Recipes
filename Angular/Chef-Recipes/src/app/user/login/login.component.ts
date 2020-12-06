@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   loginHandler(formData){
     this.userService.login(formData).subscribe( data => {
       let token:IToken = data;
-      console.log(token);
       this.userService.saveToken(token)
+      this.userService.getCurrentUser();
       this.router.navigateByUrl("/")
     });
   }

@@ -35,13 +35,12 @@
 
     <ul *ngIf="isAuthenticated">
       <li>
-        <a href="">Hello, [Username]</a>
+        <a href="">Hello, {{currUser}}</a>
       </li>
       <li>
         <a (click)="logoutHandler()">Logout</a>
       </li>
     </ul>
-
 
   </nav>
 </div>

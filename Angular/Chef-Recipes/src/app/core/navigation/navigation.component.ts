@@ -11,9 +11,13 @@ export class NavigationComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   get isAuthenticated():boolean{
-    console.log("yes");
     return this.userService.isLogged;
   }
+
+  get currUser(){
+    return this.userService.user.userName;
+  }
+
   ngOnInit(): void {
   }
 
