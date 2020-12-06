@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
   selector: 'app-control-menu',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlMenuComponent implements OnInit {
 
-  constructor() { }
+  get isAuthenticated(){
+    return this.userService.isLogged
+  } 
+
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }
