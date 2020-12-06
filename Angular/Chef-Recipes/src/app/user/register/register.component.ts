@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { error } from 'console';
 import { UserService } from '../services/user.service';
 
 @Component({

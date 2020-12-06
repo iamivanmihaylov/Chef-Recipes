@@ -10,12 +10,11 @@ import { UserService } from 'src/app/user/services/user.service';
 export class NavigationComponent implements OnInit {
   constructor(private userService:UserService) { }
 
-  isAuthenticated:boolean = this.userService.isLogged;
-  ngOnInit(): void {
+  get isAuthenticated():boolean{
+    console.log("yes");
+    return this.userService.isLogged;
   }
-
-  ngDoCheck():void{
-    this.isAuthenticated = this.userService.isLogged;
+  ngOnInit(): void {
   }
 
   logoutHandler(){
