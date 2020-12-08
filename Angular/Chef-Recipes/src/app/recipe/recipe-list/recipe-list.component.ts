@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Input() recipes;
+  @Input() recipes:IRecipe[];
 
   constructor() { }
 

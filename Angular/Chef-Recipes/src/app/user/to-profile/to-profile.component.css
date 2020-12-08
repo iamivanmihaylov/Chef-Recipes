@@ -1,0 +1,15 @@
+ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    align-self: flex-end;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.profile a{
+    color: rgb(43, 43, 43);
+    font-weight: 700;
+}

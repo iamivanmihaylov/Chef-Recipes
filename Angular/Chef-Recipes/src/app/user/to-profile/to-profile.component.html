@@ -1,0 +1,12 @@
+<div *ngIf="user != null">
+  <ul>
+    <li class="profile">
+      <a routerLink="/profile">Welcome, @{{ user.userName }}</a>
+    </li>
+    <li class="right">
+      <a (click)="logoutHandler()">Logout</a>
+    </li>
+  </ul>
+
+ </div> 
+<app-loading *ngIf="user == null" height="15px" width="15px"></app-loading> 
