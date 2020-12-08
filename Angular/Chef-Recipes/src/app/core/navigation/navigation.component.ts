@@ -9,25 +9,12 @@ import { UserService } from 'src/app/user/services/user.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit{
-  constructor(private userService:UserService) {
-  }
-
-  get userName():string{
-    let user:IUser = this.userService.getUser();
-    console.log("Here");
-    return user.userName;
-  }
-
-  get isAuthenticated():boolean{
-    return this.userService.isLogged;
-  }
-
-  ngOnInit(): void {
+export class NavigationComponent{
+  constructor(public userService:UserService) {
     
   }
 
-  logoutHandler(){
-    this.userService.logout();
+  get isAuthenticated(){
+    return this.userService.isAuthenticated()
   }
 }

@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { UserModule } from '../user/user.module';
 
 
 
 @NgModule({
-  declarations: [NavigationComponent, FooterComponent],
+  declarations: [NavigationComponent, FooterComponent,],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    UserModule
   ],
   exports: [
     NavigationComponent,

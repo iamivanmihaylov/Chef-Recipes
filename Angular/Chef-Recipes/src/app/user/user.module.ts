@@ -7,16 +7,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { SharedModule } from '../shared/shared.module';
 import { UserService } from './services/user.service';
 import { from } from 'rxjs';
+import { ToProfileComponent } from './to-profile/to-profile.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent,ToProfileComponent],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule,
     HttpClientModule
+  ],
+  exports:[
+    ToProfileComponent
   ]
 })
 export class UserModule { }

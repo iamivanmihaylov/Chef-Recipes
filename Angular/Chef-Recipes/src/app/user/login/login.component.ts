@@ -22,18 +22,10 @@ export class LoginComponent implements OnInit {
     this.userService.login(formData).subscribe( token => {
       this.userService.saveToken(token)
       this.userService.saveUser().subscribe(data => {
-        this.user = data;
-        localStorage.setItem("user",JSON.stringify(this.user));
+        localStorage.setItem("user",JSON.stringify(data));
         this.router.navigate(['/'])
       });
     });
-
-
-    
-
-   
-
-    
 
   }
 

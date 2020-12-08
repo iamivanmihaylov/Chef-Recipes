@@ -9,7 +9,7 @@ import { UserService } from 'src/app/user/services/user.service';
 export class ControlMenuComponent implements OnInit {
 
   get isAuthenticated(){
-    return this.userService.isLogged
+    return this.userService.isAuthenticated()
   } 
 
   constructor(private userService:UserService) { }

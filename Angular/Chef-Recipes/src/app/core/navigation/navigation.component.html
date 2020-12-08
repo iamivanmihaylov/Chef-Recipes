@@ -33,14 +33,6 @@
       </li>
     </ul>
 
-    <ul *ngIf="isAuthenticated">
-      <li>
-        <a href="">Hello, @{{userName}}</a>
-      </li>
-      <li>
-        <a (click)="logoutHandler()">Logout</a>
-      </li>
-    </ul>
-
+    <app-to-profile *ngIf="isAuthenticated"></app-to-profile>
   </nav>
 </div>

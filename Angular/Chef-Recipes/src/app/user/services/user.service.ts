@@ -10,22 +10,22 @@ import { environment } from '../../../environments/environment'
   providedIn: 'root'
 })
 export class UserService {
+  getCurrentUser(): IUser {
+    throw new Error('Method not implemented.');
+  }
 
   private loginPath = environment.apiUrl + "identity/login";
   private registerPath = environment.apiUrl + "identity/register";
   private getUserPath = environment.apiUrl + "identity/currentuser";
   private tokenName = "token"
   
-  public isLogged:boolean;
 
 
   constructor(private http:HttpClient) {
-    this.isLogged = this.isAuthenticated()
    }
 
   login(data): Observable<any>{
     let result = this.http.post(this.loginPath,data)
-    this.isLogged = true;
     return result
   }
 
@@ -44,7 +44,7 @@ export class UserService {
   isAuthenticated() : boolean{
     const hasToken:string = window.localStorage.getItem(this.tokenName);
 
-    if(hasToken == null){
+    if (hasToken == null){
       return false;
     }
     else{
@@ -54,7 +54,6 @@ export class UserService {
 
   logout(){
     window.localStorage.clear()
-    this.isLogged = false;
   }
 
   saveUser(): Observable<IUser>{
