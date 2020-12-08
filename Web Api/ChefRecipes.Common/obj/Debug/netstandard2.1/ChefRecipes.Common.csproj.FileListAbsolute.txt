@@ -1,9 +1,0 @@
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\bin\Debug\netstandard2.1\ChefRecipes.Common.deps.json
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\bin\Debug\netstandard2.1\ChefRecipes.Common.dll
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\bin\Debug\netstandard2.1\ChefRecipes.Common.pdb
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.csprojAssemblyReference.cache
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.AssemblyInfoInputs.cache
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.AssemblyInfo.cs
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.csproj.CoreCompileInputs.cache
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.dll
-D:\Programming\Project Repos\Chef-Recipes\Web Api\ChefRecipes.Common\obj\Debug\netstandard2.1\ChefRecipes.Common.pdb
