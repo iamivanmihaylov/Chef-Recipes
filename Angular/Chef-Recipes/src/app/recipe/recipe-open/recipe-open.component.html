@@ -30,7 +30,7 @@
 
     <div class="menu">
       <div class="menu-like">
-        <i
+        <i *ngIf="isAuthenticated"
           (click)="likeHandler()"
           [ngClass]="{ 'fas is-liked': isLiked }"
           class="far fa-heart"
@@ -52,11 +52,11 @@
         #menuAddComment
         class="menu-add-comment"
       >
-        <i class="fas fa-plus"></i>
+        <i *ngIf="isAuthenticated" class="fas fa-plus"></i>
       </div>
     </div>
     <div *ngIf="showComments" class="comments">
-      <div *ngIf="showAddComment" class="write-comment">
+      <div *ngIf="showAddComment " class="write-comment">
         <span>Add Comment</span>
         <editor [apiKey]="tinyMceKey" [init]="tinyMceSettings"></editor>
         <div class="add-comment-buttons">
@@ -134,7 +134,6 @@
           <span>Bread</span>
         </li>
       </ul>
-      <button class="cook-button">Start Cooking</button>
     </div>
   </div>
 </div>

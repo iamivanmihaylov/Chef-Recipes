@@ -1,13 +1,12 @@
 <div *ngIf="user != null">
   <ul>
     <li class="profile">
-      <div class="cirle">{{user.userName[0].toUpperCase()}}</div>
+      <app-icon [height]="35" [width]="35" [text]="stringService.getFirstCharToUpper(user.userName)"></app-icon>
       <a [routerLink]="['/profile', user.userId]">@{{ user.userName }}</a>
     </li>
     <li class="right">
       <a (click)="logoutHandler()">Logout</a>
     </li>
   </ul>
-
  </div> 
 <app-loading *ngIf="user == null" height="15px" width="15px"></app-loading> 

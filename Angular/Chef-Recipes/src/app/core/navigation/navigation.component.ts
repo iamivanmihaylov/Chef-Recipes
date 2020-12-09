@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user/services/user.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent{
-  constructor(public userService:UserService) {
+  constructor(private userService:UserService) {
     
   }
 

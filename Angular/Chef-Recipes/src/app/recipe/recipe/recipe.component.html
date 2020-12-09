@@ -8,8 +8,8 @@
             <i class="fas fa-user-circle"></i>
             <span>@dani123</span>
         </div>
-        <div class="likes-comments">
-            <div *ngIf="isAuthenticated" class="likes">
+        <div *ngIf="isAuthenticated" class="likes-comments">
+            <div class="likes">
                 <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
                 <span>10k</span>
             </div>

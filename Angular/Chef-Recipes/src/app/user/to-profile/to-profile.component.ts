@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/shared/interfaces/user.model';
+import { StringManipulationService } from 'src/app/shared/services/string-manipulation.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class ToProfileComponent implements OnInit {
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService,public stringService:StringManipulationService) {
   }
 
   get user():IUser{

@@ -11,23 +11,11 @@ ul{
 .profile a{
     color: rgb(43, 43, 43);
     font-weight: 700;
-    
+    margin-left: 10px;
 }
 
 .profile{
     display: flex;
     align-items: center;
-}
-
-.cirle{
-    background-color: green;
-    color: white;
-    padding: 15px 15px;
-    border-radius: 50px;
-    margin-right: 10px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
 }

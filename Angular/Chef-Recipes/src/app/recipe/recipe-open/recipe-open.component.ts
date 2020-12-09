@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { UserService } from 'src/app/user/services/user.service';
 import { environment } from '../../../environments/environment'
  
 @Component({
@@ -24,11 +25,15 @@ export class RecipeOpenComponent implements AfterViewInit {
 
   isLiked:boolean = false;
 
+  get isAuthenticated(){
+    return this.userService.isAuthenticated();
+  }
+
   @ViewChild("menuIngredients") menuIngredients: ElementRef;
   @ViewChild("menuComments") menuComments: ElementRef;
   @ViewChild("menuAddComment") menuAddComment: ElementRef;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2,private userService:UserService) { }
 
   ngAfterViewInit(): void {
     this.addBottomBorder(this.menuIngredients);
