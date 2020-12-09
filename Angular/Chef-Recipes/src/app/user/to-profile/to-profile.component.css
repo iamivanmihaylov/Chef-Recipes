@@ -1,15 +1,33 @@
 ul{
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .right{
-    align-self: flex-end;
-    margin-top: 5px;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 .profile a{
     color: rgb(43, 43, 43);
     font-weight: 700;
+    
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+.cirle{
+    background-color: green;
+    color: white;
+    padding: 15px 15px;
+    border-radius: 50px;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

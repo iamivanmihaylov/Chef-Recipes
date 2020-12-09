@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable,concat, merge } from 'rxjs';
+import { Observable,concat, merge, of,zip} from 'rxjs';
+import { concatMap, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { IToken } from 'src/app/shared/interfaces/token-data.model';
 import { UserService } from '../services/user.service';
 
@@ -19,6 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginHandler(formData){
+
+    //I know this is an anti pattern but it works. It does not work with switchMap,mergeMap
+
     this.userService.login(formData).subscribe( token => {
       this.userService.saveToken(token)
       this.userService.saveUser().subscribe(data => {
@@ -26,7 +30,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/'])
       });
     });
-
+   
   }
-
 }

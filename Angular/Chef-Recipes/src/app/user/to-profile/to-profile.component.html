@@ -1,7 +1,8 @@
 <div *ngIf="user != null">
   <ul>
     <li class="profile">
-      <a routerLink="/profile">Welcome, @{{ user.userName }}</a>
+      <div class="cirle">{{user.userName[0].toUpperCase()}}</div>
+      <a routerLink="/profile">@{{ user.userName }}</a>
     </li>
     <li class="right">
       <a (click)="logoutHandler()">Logout</a>

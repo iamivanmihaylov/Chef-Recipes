@@ -94,6 +94,8 @@
             var userEmail = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
 
+            var currentUser = this.userManager.FindByNameAsync(userName);
+
             var user = new
             {
                 UserName = userName,

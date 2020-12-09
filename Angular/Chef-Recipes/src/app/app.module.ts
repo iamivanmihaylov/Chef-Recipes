@@ -26,7 +26,6 @@ import { UserService } from './user/services/user.service';
     HttpClientModule
   ],
   providers: [
-    UserService
   ],
   bootstrap: [AppComponent]
 })
