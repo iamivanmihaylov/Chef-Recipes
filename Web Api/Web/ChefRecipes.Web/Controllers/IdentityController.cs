@@ -94,8 +94,6 @@
             var userEmail = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
 
-            var currentUser = this.userManager.FindByNameAsync(userName);
-
             var user = new
             {
                 UserName = userName,
@@ -104,6 +102,25 @@
             };
 
             return this.Ok(user);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUser(string id)
+        {
+            var user = await this.userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return this.NotFound();
+            }
+
+            var result = new
+            {
+                UserName = user.UserName,
+                UserEmail = user.Email,
+                UserId = user.Id,
+            };
+
+            return this.Ok(result);
         }
     }
 }
