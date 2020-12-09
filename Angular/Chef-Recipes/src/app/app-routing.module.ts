@@ -25,24 +25,8 @@ const routes: Routes = [
     component: AboutPageComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
     path: 'privacy',
     component: PrivacyComponent
-  },
-  {
-    path: 'recipe/create',
-    component: RecipeCreateComponent
-  },
-  {
-    path: 'recipe/:id',
-    component: RecipeOpenComponent
   },
   {
     path: '**',

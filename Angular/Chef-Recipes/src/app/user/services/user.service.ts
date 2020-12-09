@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { observable, Observable, Subject } from 'rxjs';
 import { debounceTime, map, switchMap, throttleTime } from 'rxjs/operators';
 import { IToken } from 'src/app/shared/interfaces/token-data.model';
@@ -10,9 +11,6 @@ import { environment } from '../../../environments/environment'
   providedIn: 'root'
 })
 export class UserService {
-  getCurrentUser(): IUser {
-    throw new Error('Method not implemented.');
-  }
 
   private loginPath = environment.apiUrl + "identity/login";
   private registerPath = environment.apiUrl + "identity/register";
@@ -21,8 +19,8 @@ export class UserService {
   
 
 
-  constructor(private http:HttpClient) {
-   }
+  constructor(private http:HttpClient,private router:Router) {
+  }
 
   login(data): Observable<any>{
     let result = this.http.post(this.loginPath,data)
@@ -54,6 +52,7 @@ export class UserService {
 
   logout(){
     window.localStorage.clear()
+    this.router.navigate(['/']);
   }
 
   saveUser(): Observable<IUser>{
@@ -61,7 +60,7 @@ export class UserService {
    headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)})
   }
 
-  getUser(){
+  getCurrentUser(){
     let currUser:IUser = JSON.parse(localStorage.getItem("user"));
     return currUser;
   }

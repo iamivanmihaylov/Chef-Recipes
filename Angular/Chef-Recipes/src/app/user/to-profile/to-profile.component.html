@@ -2,7 +2,7 @@
   <ul>
     <li class="profile">
       <div class="cirle">{{user.userName[0].toUpperCase()}}</div>
-      <a routerLink="/profile">@{{ user.userName }}</a>
+      <a [routerLink]="['/profile', user.userId]">@{{ user.userName }}</a>
     </li>
     <li class="right">
       <a (click)="logoutHandler()">Logout</a>

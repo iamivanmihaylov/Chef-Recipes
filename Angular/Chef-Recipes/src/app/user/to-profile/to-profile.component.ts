@@ -13,7 +13,7 @@ export class ToProfileComponent implements OnInit {
   }
 
   get user():IUser{
-    let user:IUser = this.userService.getUser();
+    let user:IUser = this.userService.getCurrentUser();
     return user;
   }
 

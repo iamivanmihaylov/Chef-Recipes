@@ -8,16 +8,19 @@ import { SharedModule } from '../shared/shared.module';
 import { UserService } from './services/user.service';
 import { from } from 'rxjs';
 import { ToProfileComponent } from './to-profile/to-profile.component';
+import { UserRoutingModule } from './user-routing.module';
+import { ProfileComponent } from './profile/profile.component'
 
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent,ToProfileComponent],
+  declarations: [LoginComponent, RegisterComponent,ToProfileComponent, ProfileComponent],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    UserRoutingModule
   ],
   exports:[
     ToProfileComponent

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
   selector: 'app-recipe',
@@ -11,11 +12,16 @@ export class RecipeComponent implements OnInit {
 
   isLiked = false
 
+ get isAuthenticated() {
+   return this.userService.isAuthenticated();
+ }
+  
+
   likeHandler(){
     this.isLiked = !this.isLiked
   }
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }

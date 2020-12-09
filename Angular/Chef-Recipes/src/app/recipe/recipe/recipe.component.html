@@ -9,7 +9,7 @@
             <span>@dani123</span>
         </div>
         <div class="likes-comments">
-            <div class="likes">
+            <div *ngIf="isAuthenticated" class="likes">
                 <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
                 <span>10k</span>
             </div>

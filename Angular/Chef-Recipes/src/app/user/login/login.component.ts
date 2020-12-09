@@ -21,15 +21,15 @@ export class LoginComponent implements OnInit {
 
   loginHandler(formData){
 
-    //I know this is an anti pattern but it works. It does not work with switchMap,mergeMap
-
-    this.userService.login(formData).subscribe( token => {
-      this.userService.saveToken(token)
-      this.userService.saveUser().subscribe(data => {
-        localStorage.setItem("user",JSON.stringify(data));
-        this.router.navigate(['/'])
-      });
-    });
+    this.userService.login(formData).pipe(
+      switchMap(({ token }) => {
+        this.userService.saveToken({token})
+        return this.userService.saveUser()
+      })
+    ).subscribe(data => {
+      localStorage.setItem("user",JSON.stringify(data));
+      this.router.navigate(['/'])
+    })
    
   }
 }

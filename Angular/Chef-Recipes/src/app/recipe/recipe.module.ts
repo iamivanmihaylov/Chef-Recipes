@@ -8,6 +8,7 @@ import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
 import { FormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { SharedModule } from '../shared/shared.module';
+import { RecipeRoutingModule } from './recipe-routing.module';
 
 
 
@@ -22,7 +23,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     EditorModule,
-    SharedModule
+    SharedModule,
+    RecipeRoutingModule
   ],
   exports:[
     RecipeListComponent,
