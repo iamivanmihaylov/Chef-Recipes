@@ -9,7 +9,7 @@ export class IconComponent implements OnInit {
 
   @Input() width:number;
   @Input() height:number;
-  @Input() text:number;
+  @Input() text:string;
 
   widthPx:string;
   heightPx:string;
@@ -21,7 +21,7 @@ export class IconComponent implements OnInit {
   ngOnInit(): void {
     this.widthPx = this.width+ "px";
     this.heightPx = this.height + "px"
-    this.paddingPx = (this.width-20).toString() + "px";
+    this.paddingPx = (this.width - 20).toString() + "px";
     this.fontPx = (this.width - 15).toString() + "px";
   }
 
