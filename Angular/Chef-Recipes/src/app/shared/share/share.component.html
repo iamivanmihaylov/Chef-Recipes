@@ -1,0 +1,21 @@
+<div class="container" (click)="toggleSharePage()">
+    <i class="far fa-share-square"></i>
+</div>
+
+<div *ngIf="showSharedPage" class="page">
+    <div class="window">
+        <div (click)="toggleSharePage()">
+        <ngx-qrcode
+            [elementType]="elementType"
+            [errorCorrectionLevel]="correctionLevel"
+            [value]="value"
+            cssClass="bshadow">
+        </ngx-qrcode>
+        <div class="url">
+            {{value}}
+        </div>
+        
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+</div>

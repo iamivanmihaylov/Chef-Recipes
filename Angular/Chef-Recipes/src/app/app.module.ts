@@ -9,7 +9,7 @@ import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { RecipeModule } from './recipe/recipe.module';
 import { HttpClientModule } from '@angular/common/http';
-import { UserService } from './user/services/user.service';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { UserService } from './user/services/user.service';
     HomeModule,
     UserModule,
     RecipeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
   ],

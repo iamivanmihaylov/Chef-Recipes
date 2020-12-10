@@ -69,3 +69,9 @@ app-error{
   background-color: rgb(34, 34, 34);
   cursor: not-allowed;
 }
+
+.bshadow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

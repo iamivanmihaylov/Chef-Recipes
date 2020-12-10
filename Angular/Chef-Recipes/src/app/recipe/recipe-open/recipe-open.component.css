@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   margin: 50px 140px;
+  position: relative;
 }
 
 .img-wrapper {
@@ -28,9 +29,15 @@
   font-size: 33px;
 }
 
-.user {
+.user div{
   display: flex;
   align-items: center;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .user-name {

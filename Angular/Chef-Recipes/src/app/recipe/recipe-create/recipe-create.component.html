@@ -9,13 +9,18 @@
       <div class="field description">
         <label for="">Description</label>
         <textarea formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+        <app-error *ngIf="form.get('description').touched && form.get('description').errors?.required">
+          Description is required!
+        </app-error>
       </div>
       <div class="field image-url">
         <label for="">Image URL</label>
         <div class="image-inputs">
           <input formControlName="imageURL" (keyup)="changePhoto(imgURL)" #imgURL type="text" name="" id="" />
         </div>
-        
+        <app-error *ngIf="form.get('imageURL').touched && form.get('imageURL').errors?.required">
+          ImageURL is required!
+        </app-error>
       </div>
       <div class="field control-menu">
         <button type="button" (click)="addIngredient()">
@@ -26,11 +31,12 @@
         <div>
           <span>Ingredients</span>
         </div>
+        <app-error *ngIf="form.get('ingredients').errors?.required">Ingredients is required!</app-error>
         <div formArrayName="ingredients" class="ingredients">
           <div *ngFor="let ingredient of ingredients.controls; let ingredientIndex=index" [formGroupName]="ingredientIndex"  class="ingredient">
             <input formControlName="ingredientName" class="ingredient-name" type="text" placeholder="Ingredient" />
             <input  formControlName="amount" class="ingredient-amount" type="number" placeholder="Amount" />
-            <select formControlName="type" name="" id="">
+            <select formControlName="type">
               <option value="Tbsp">Tbsp</option>
               <option value="tsp">tsp</option>
               <option value="Oz">Oz</option>
@@ -54,11 +60,8 @@
             </div>
           </div>
         </div>
-        <button class="submit-button" type="submit">Submit</button>
+        <button [disabled]="form.invalid" class="submit-button" type="submit">Submit</button>
       </div>
     </div>
   </div>
 </form>
-
-{{form.value | json}}
-

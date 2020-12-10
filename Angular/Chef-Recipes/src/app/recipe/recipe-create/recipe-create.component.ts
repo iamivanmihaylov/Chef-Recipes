@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-create',
@@ -14,17 +14,7 @@ export class RecipeCreateComponent implements OnInit {
   imageURL:string = this.defaultImage ;
 
   constructor(private fb:FormBuilder) { 
-    this.form = this.fb.group({
-      description:[ '',[],[] ],
-      imageURL: ['',[],[]],
-      ingredients:this.fb.array(
-        [this.fb.group({
-          ingredientName:['',[],[]],
-          amount:['',[],[]],
-          type:['Tbsp',[],[]]
-        })]
-      )
-    })
+
   }
 
   get ingredients(){
@@ -33,18 +23,29 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   submitHandler(){
-    
+    console.log(this.form.value);
   }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      description:[ '',[Validators.required],[] ],
+      imageURL: ['',[Validators.required],[]],
+      ingredients:this.fb.array(
+        [this.fb.group({
+          ingredientName:['',[Validators.required],[]],
+          amount:['',[Validators.required],[]],
+          type:['Tbsp',[Validators.required],[]]
+        })],[Validators.required]
+      )
+    })
   }
   
   addIngredient(){
     this.ingredients.push(this.fb.group({
-      ingredientName:['',[],[]],
-      amount:['',[],[]],
-      type:['Tbsp',[],[]]
-    }))
+      ingredientName:['',[Validators.required],[]],
+      amount:['',[Validators.required],[]],
+      type:['Tbsp',[Validators.required],[]]
+    },[Validators.required]))
   }
 
   removeIngredient(index:number){

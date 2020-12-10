@@ -61,6 +61,10 @@
   border-radius: 10px;
 }
 
+.submit-button:disabled{
+  background: radial-gradient(circle, rgb(231, 51, 51) 0%, rgb(201, 54, 54) 100%);
+}
+
 .align {
   display: flex;
   flex-direction: column;

@@ -9,8 +9,11 @@
   </div>
   <div class="aside">
     <div class="user">
-      <i class="far fa-user-circle"></i>
-      <span class="user-name">@dani4356</span>
+      <div>
+        <i class="far fa-user-circle"></i>
+        <span class="user-name">@dani4356</span>
+      </div>
+      <app-share></app-share>
     </div>
 
     <div class="description">
@@ -25,12 +28,12 @@
       </p>
     </div>
 
-    
     <hr class="desc-menu-hr" />
 
     <div class="menu">
       <div class="menu-like">
-        <i *ngIf="isAuthenticated"
+        <i
+          *ngIf="isAuthenticated"
           (click)="likeHandler()"
           [ngClass]="{ 'fas is-liked': isLiked }"
           class="far fa-heart"
@@ -56,7 +59,7 @@
       </div>
     </div>
     <div *ngIf="showComments" class="comments">
-      <div *ngIf="showAddComment " class="write-comment">
+      <div *ngIf="showAddComment" class="write-comment">
         <span>Add Comment</span>
         <editor [apiKey]="tinyMceKey" [init]="tinyMceSettings"></editor>
         <div class="add-comment-buttons">
