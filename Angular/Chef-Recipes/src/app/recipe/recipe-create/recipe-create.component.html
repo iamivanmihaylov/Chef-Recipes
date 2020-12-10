@@ -1,4 +1,4 @@
-<form action="">
+<form [formGroup]="form" (ngSubmit)="submitHandler() ">
   <div class="main">
     <div class="img-wrapper">
       <div class="image">
@@ -8,17 +8,17 @@
     <div class="aside">
       <div class="field description">
         <label for="">Description</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea formControlName="description" name="" id="" cols="30" rows="10"></textarea>
       </div>
       <div class="field image-url">
         <label for="">Image URL</label>
         <div class="image-inputs">
-          <input (keyup)="changePhoto(imgURL)" #imgURL type="text" name="" id="" />
+          <input formControlName="imageURL" (keyup)="changePhoto(imgURL)" #imgURL type="text" name="" id="" />
         </div>
         
       </div>
       <div class="field control-menu">
-        <button type="button" (click)="addRecipe()">
+        <button type="button" (click)="addIngredient()">
           Add Ingredient <i class="fas fa-plus"></i>
         </button>
       </div>
@@ -26,11 +26,11 @@
         <div>
           <span>Ingredients</span>
         </div>
-        <div class="ingredients">
-          <div class="ingredient" *ngFor="let recipe of recipes; let i = index">
-            <input class="ingredient-name" type="text" maxlength="10" placeholder="Ingredient" name="ingredient_{{ recipe.id }}" id="" />
-            <input class="ingredient-amount" min="0" max="99999" type="number" placeholder="Amount" name="time_{{ recipe.id }}" id="" />
-            <select name="" id="">
+        <div formArrayName="ingredients" class="ingredients">
+          <div *ngFor="let ingredient of ingredients.controls; let ingredientIndex=index" [formGroupName]="ingredientIndex"  class="ingredient">
+            <input formControlName="ingredientName" class="ingredient-name" type="text" placeholder="Ingredient" />
+            <input  formControlName="amount" class="ingredient-amount" type="number" placeholder="Amount" />
+            <select formControlName="type" name="" id="">
               <option value="Tbsp">Tbsp</option>
               <option value="tsp">tsp</option>
               <option value="Oz">Oz</option>
@@ -48,7 +48,7 @@
               <option value="Other">Other</option>
             </select>
             <div class="remove-btn">
-              <button type="button" (click)="removeRecipe(i)">
+              <button type="button" (click)="removeIngredient(ingredientIndex)">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </div>
@@ -59,3 +59,6 @@
     </div>
   </div>
 </form>
+
+{{form.value | json}}
+

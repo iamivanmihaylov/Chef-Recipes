@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-create',
@@ -7,26 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeCreateComponent implements OnInit {
 
-  recipes:any[] = [{
-    id: 1,
-    ingredientName: '',
-    amount:0,
-  }]
+  form:FormGroup;
 
   defaultImage:string = "../../../assets/images/no-image.png";
   imageURL:string = this.defaultImage ;
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { 
+    this.form = this.fb.group({
+      description:[ '',[],[] ],
+      imageURL: ['',[],[]],
+      ingredients:this.fb.array(
+        [this.fb.group({
+          ingredientName:['',[],[]],
+          amount:['',[],[]],
+          type:['Tbsp',[],[]]
+        })]
+      )
+    })
+  }
+
+  get ingredients(){
+     let a = this.form.get('ingredients') as FormArray;
+     return a;
+  }
+
+  submitHandler(){
+    
+  }
 
   ngOnInit(): void {
   }
+  
+  addIngredient(){
+    this.ingredients.push(this.fb.group({
+      ingredientName:['',[],[]],
+      amount:['',[],[]],
+      type:['Tbsp',[],[]]
+    }))
+  }
 
-  addRecipe(){
-    this.recipes.push({
-      id:this.recipes.length + 1,
-      ingredientName: '',
-      amount: 0
-    })
+  removeIngredient(index:number){
+    this.ingredients.removeAt(index);
   }
 
   changePhoto(imageURL:HTMLInputElement){
@@ -36,10 +58,6 @@ export class RecipeCreateComponent implements OnInit {
     }
     this.imageURL= imageURL.value;
     
-  }
-
-  removeRecipe(i:number){
-    this.recipes.splice(i,1)
   }
 
 }
