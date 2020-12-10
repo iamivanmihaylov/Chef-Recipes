@@ -15,6 +15,7 @@ export class UserService {
   private loginPath = environment.apiUrl + "identity/login";
   private registerPath = environment.apiUrl + "identity/register";
   private getUserPath = environment.apiUrl + "identity/currentuser";
+  private getUserByIdPath = environment.apiUrl + "identity/";
   private tokenName = "token"
   
 
@@ -63,5 +64,9 @@ export class UserService {
   getCurrentUser(){
     let currUser:IUser = JSON.parse(localStorage.getItem("user"));
     return currUser;
+  }
+
+  getUserById(userId:string):Observable<IUser>{
+    return this.http.get<IUser>(this.getUserByIdPath+userId)
   }
 }

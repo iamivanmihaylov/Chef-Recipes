@@ -1,1 +1,29 @@
-<p>profile works!</p>
+<app-loading *ngIf="user == null;else profile"></app-loading>
+<ng-template #profile>
+<div class="main">
+  <div class="user">
+
+    <div class="icon">
+      <app-icon [height]="70" [width]="70" [text]="stringManipulation.getFirstCharToUpper(user.userName)"></app-icon>
+      <div>
+        <span class="user-name">@{{user.userName}}</span>
+      </div>
+    </div>
+
+    <div class="user-info">
+      <div>
+        <span class="title">User Name</span>
+        <span class="value">{{user.userName}}</span>
+      </div>
+      <div>
+        <span class="title">Recipes</span>
+        <span class="value">5</span>
+      </div>
+      <div>
+        <span class="title">E-Mail</span>
+        <span class="value">{{user.userEmail}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
