@@ -3,6 +3,7 @@ import { IIngredient } from './ingredient.model'
 
 
 export interface IRecipe{
+    id:number,
     title:string,
     userUserName: string,
     imageURL:string,

@@ -1,4 +1,14 @@
-<!-- <app-loading width="30px" height="30px" loaderWidth="70px" ></app-loading> -->
-<div >
-    <app-recipe *ngFor="let a of [1,2,3,4,5,6,7,8,9,10,11,12]"  [recipe] = ""></app-recipe>
-</div>
+<app-loading
+  *ngIf="recipes == null; else elseTemplate"
+  width="30px"
+  height="30px"
+  loaderWidth="70px"
+></app-loading>
+<ng-template #elseTemplate>
+  <div>
+    <app-recipe
+      *ngFor="let recipe of recipes"
+      [recipe]="recipe"
+    ></app-recipe>
+  </div>
+</ng-template>

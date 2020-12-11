@@ -44,7 +44,8 @@
         [HttpGet]
         public IActionResult Get()
         {
-            return this.Ok("Works");
+            var allRecipes = this.recipeService.GetAll();
+            return this.Ok(allRecipes);
         }
 
         [Authorize]

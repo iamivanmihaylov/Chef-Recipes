@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
+import { StringManipulationService } from 'src/app/shared/services/string-manipulation.service';
 import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/user/services/user.service';
 })
 export class RecipeComponent implements OnInit {
 
-  @Input() recipe;
+  @Input() recipe:IRecipe;
 
   isLiked = false
 
@@ -21,7 +23,7 @@ export class RecipeComponent implements OnInit {
     this.isLiked = !this.isLiked
   }
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,public stringMainpulation:StringManipulationService) { }
 
   ngOnInit(): void {
   }

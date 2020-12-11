@@ -5,7 +5,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeOpenComponent } from './recipe-open/recipe-open.component';
 import { RouterModule } from '@angular/router';
 import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { SharedModule } from '../shared/shared.module';
 import { RecipeRoutingModule } from './recipe-routing.module';
@@ -25,7 +25,8 @@ import { RecipeRoutingModule } from './recipe-routing.module';
     EditorModule,
     SharedModule,
     RecipeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     RecipeListComponent,

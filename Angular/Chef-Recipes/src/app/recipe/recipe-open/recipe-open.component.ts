@@ -109,4 +109,9 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   closeComment(){
     this.showAddComment = false;
   }
+
+  sendComment(formData){
+    console.log(formData);
+    // Add comment
+  }
 }

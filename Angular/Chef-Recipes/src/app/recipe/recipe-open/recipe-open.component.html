@@ -12,7 +12,7 @@
   <div class="aside">
     <div class="user">
       <div>
-        <i class="far fa-user-circle"></i>
+        <app-icon [height]="35" [width]="35" [text]="recipe.userUserName?.toString()[0].toUpperCase()"></app-icon>
         <span class="user-name">@{{recipe.userUserName}}</span>
       </div>
       <app-share></app-share>
@@ -57,12 +57,16 @@
     <div *ngIf="showComments" class="comments">
       <div *ngIf="showAddComment" class="write-comment">
         <span>Add Comment</span>
-        <editor [apiKey]="tinyMceKey" [init]="tinyMceSettings"></editor>
+        <form #f="ngForm" (ngSubmit)="sendComment(f.value)">
+        <editor #input="ngModel" ngModel name="commentValues" outputFormat="text" [apiKey]="tinyMceKey" [init]="tinyMceSettings" required></editor>
         <div class="add-comment-buttons">
           <button class="add-btn">Add</button>
           <button class="cancel-btn" (click)="closeComment()">Cancel</button>
         </div>
+      </form>
+        
       </div>
+      
       <div class="comment">
         <div class="comment-user-info">
           <i class="far fa-user-circle"></i>
@@ -79,7 +83,6 @@
 
       <div class="comment">
         <div class="comment-user-info">
-          <i class="far fa-user-circle"></i>
           <span>@dani4356</span>
         </div>
         <div class="comment-description">

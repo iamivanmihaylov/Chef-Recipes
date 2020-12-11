@@ -1,12 +1,14 @@
-<div class="main">
-    <div routerLink="/recipe/1" class="image">
-        <span class="title">Salad with tomatoes and cucumbers</span>
-        <img src="https://hips.hearstapps.com/hmg-prod/images/delish-roast-beef-horizontal-1540505165.jpg" alt="">
+<app-loading *ngIf="recipe == null; else elseTemplate"></app-loading>
+<ng-template #elseTemplate>
+<div class="main" >
+    <div [routerLink]="['/recipe/',recipe.id]" class="image">
+        <span class="title">{{recipe.title}}</span>
+        <img [src]="recipe.imageURL" alt="">
     </div>
     <div class="bottom">
         <div class="user-info">
-            <i class="fas fa-user-circle"></i>
-            <span>@dani123</span>
+            <app-icon [height]="25" [width]="25" [text]="recipe.userUserName?.toString()[0].toUpperCase()"></app-icon>
+            <span>@{{recipe.userUserName}}</span>
         </div>
         <div *ngIf="isAuthenticated" class="likes-comments">
             <div class="likes">
@@ -20,3 +22,4 @@
         </div>
     </div>
 </div>
+</ng-template>

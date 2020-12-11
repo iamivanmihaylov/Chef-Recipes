@@ -25,6 +25,11 @@
         public IEnumerable<Recipe> GetAll()
         {
             var recipes = this.recipeRepository.All();
+            if (recipes == null)
+            {
+                return new List<Recipe>();
+            }
+
             return recipes.ToList();
         }
 

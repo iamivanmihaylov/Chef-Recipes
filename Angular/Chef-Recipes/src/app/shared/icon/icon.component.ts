@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { StringManipulationService } from '../services/string-manipulation.service';
 
 @Component({
   selector: 'app-icon',

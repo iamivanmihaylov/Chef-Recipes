@@ -22,4 +22,8 @@ export class RecipeService {
   openRecipe(id:number):Observable<IRecipe>{
     return this.http.get<IRecipe>(this.recipeUrl+id)
   }
+
+  getAllRecipes(){
+    return this.http.get<IRecipe[]>(this.recipeUrl)
+  }
 }
