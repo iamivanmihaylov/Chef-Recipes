@@ -147,6 +147,7 @@ input::-webkit-inner-spin-button {
   margin: 10px 0;
   border: 2px solid black;
   border-radius: 5px;
+  font-family: Arial, sans-serif;
 }
 
 .control-menu button{

@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using ChefRecipes.Data.Models;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
@@ -19,10 +20,30 @@
             this.userManager = userManager;
         }
 
-        [Authorize]
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return this.Ok("Works");
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
+            return this.Ok("Works");
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public IActionResult DeletById()
+        {
+            return this.Ok("Works");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult Post()
+        {
+            // TODO: Create inout model!
             return this.Ok("Works");
         }
     }
