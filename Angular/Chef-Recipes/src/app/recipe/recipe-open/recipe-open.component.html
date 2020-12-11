@@ -2,7 +2,7 @@
   <div class="img-wrapper">
     
     <div class="image">
-      <div class="title">Hello</div>
+      <div class="title">{{recipe.title}}</div>
       <img
         [src]="recipe.imageURL"
         alt=""
@@ -13,7 +13,7 @@
     <div class="user">
       <div>
         <i class="far fa-user-circle"></i>
-        <span class="user-name">@dani4356</span>
+        <span class="user-name">@{{recipe.userUserName}}</span>
       </div>
       <app-share></app-share>
     </div>

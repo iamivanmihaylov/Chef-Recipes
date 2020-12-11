@@ -1,5 +1,8 @@
 import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { nextTick } from 'process';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 import { UserService } from 'src/app/user/services/user.service';
 import { environment } from '../../../environments/environment'
@@ -38,7 +41,11 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   @ViewChild("menuComments") menuComments: ElementRef;
   @ViewChild("menuAddComment") menuAddComment: ElementRef;
 
-  constructor(private renderer: Renderer2,private userService:UserService,private recipeService:RecipeService,private route:ActivatedRoute) { }
+  constructor(private renderer: Renderer2,
+    private userService:UserService,
+    private recipeService:RecipeService,
+    private route:ActivatedRoute,
+    private router:Router) { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -49,9 +56,15 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   ngOnInit():void{
     let paramId = this.route.snapshot.params["id"]
     
-    this.recipeService.openRecipe(paramId).subscribe(data => {
-      this.recipe = data;
-      console.log(this.recipe);
+    this.recipeService.openRecipe(paramId).subscribe({
+      next: (data) =>{
+        this.recipe = data;
+      },
+      error: (err) =>{
+        if (err.status == 404){
+          this.router.navigate(["404"])
+        }
+      }
     })
   }
 

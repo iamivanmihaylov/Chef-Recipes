@@ -42,6 +42,7 @@
                 Description = description,
                 ImageURL = imageUrl,
                 UserId = user.Id,
+                UserUserName = user.UserName,
             };
 
             await this.recipeRepository.AddAsync(recipe);
