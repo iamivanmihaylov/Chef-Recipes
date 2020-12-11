@@ -1,5 +1,5 @@
 export interface IIngredient{
-    product: string,
+    ingredientName: string,
     amount: string,
-    measurement: string
+    type: string
 }

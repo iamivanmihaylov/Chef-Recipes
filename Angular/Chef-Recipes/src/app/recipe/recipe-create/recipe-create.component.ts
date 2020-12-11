@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-create',
@@ -13,7 +16,7 @@ export class RecipeCreateComponent implements OnInit {
   defaultImage:string = "../../../assets/images/no-image.png";
   imageURL:string = this.defaultImage ;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder,private recipeService:RecipeService,private router:Router) { 
 
   }
 
@@ -23,7 +26,10 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   submitHandler(){
-    console.log(this.form.value);
+    console.log(this.form.value,"Before")
+    this.recipeService.createRecipe(this.form.value).subscribe((data) => {
+      this.router.navigate(['/recipe',data.id])
+    })
   }
 
   ngOnInit(): void {

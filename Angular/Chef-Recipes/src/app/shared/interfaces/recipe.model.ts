@@ -1,10 +1,9 @@
 import { from } from 'rxjs';
-import { IIngredient } from './Ingredient.model'
+import { IIngredient } from './ingredient.model'
 
 
 export interface IRecipe{
     username: string,
     description: string,
-    isLiked: boolean,
     ingredients: IIngredient[],
 }

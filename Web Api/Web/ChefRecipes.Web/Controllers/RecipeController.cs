@@ -7,6 +7,8 @@
     using System.Threading.Tasks;
 
     using ChefRecipes.Data.Models;
+    using ChefRecipes.Services.Data;
+    using ChefRecipes.Web.ViewModels.Recipe;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -14,10 +16,14 @@
     public class RecipeController : BaseController
     {
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IRecipeService recipeService;
+        private readonly IIngredientService ingredientService;
 
-        public RecipeController(UserManager<ApplicationUser> userManager)
+        public RecipeController(UserManager<ApplicationUser> userManager, IRecipeService recipeService, IIngredientService ingredientService)
         {
             this.userManager = userManager;
+            this.recipeService = recipeService;
+            this.ingredientService = ingredientService;
         }
 
         [HttpGet("{id}")]
@@ -41,10 +47,25 @@
 
         [Authorize]
         [HttpPost]
-        public IActionResult Post()
+        public async Task<IActionResult> Post(RecipeInputModel inputModel)
         {
-            // TODO: Create inout model!
-            return this.Ok("Works");
+            var recipe = new Recipe()
+            {
+                Description = inputModel.Description,
+                ImageURL = inputModel.Description,
+            };
+
+            var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var user = await this.userManager.FindByIdAsync(userId);
+
+            var recipeId = await this.recipeService.PostAsync(recipe.Description, recipe.ImageURL, user);
+
+            foreach (var ingredient in inputModel.Ingredients)
+            {
+                await this.ingredientService.Create(ingredient.IngredientName, ingredient.Amount, ingredient.Type, recipeId);
+            }
+
+            return this.Created("recipe", new { id = recipeId });
         }
     }
 }
