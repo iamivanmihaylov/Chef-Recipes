@@ -30,13 +30,15 @@
 
         public Recipe GetById(int id)
         {
-            throw new NotImplementedException();
+            var recipe = this.recipeRepository.All().Where(r => r.Id == id).FirstOrDefault();
+            return recipe;
         }
 
-        public async Task<int> PostAsync(string description, string imageUrl, ApplicationUser user)
+        public async Task<int> PostAsync(string title, string description, string imageUrl, ApplicationUser user)
         {
             var recipe = new Recipe()
             {
+                Title = title,
                 Description = description,
                 ImageURL = imageUrl,
                 UserId = user.Id,

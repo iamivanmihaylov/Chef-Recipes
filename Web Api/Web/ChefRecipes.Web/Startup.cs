@@ -49,7 +49,8 @@
             })
             .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             var applicationSettingsConfiguration = this.configuration.GetSection("ApplicationSettings");
             services.Configure<AppSettings>(applicationSettingsConfiguration);

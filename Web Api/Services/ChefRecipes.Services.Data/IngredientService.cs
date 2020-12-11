@@ -1,6 +1,8 @@
 ﻿using ChefRecipes.Data.Common.Repositories;
 using ChefRecipes.Data.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ChefRecipes.Services.Data
@@ -26,6 +28,12 @@ namespace ChefRecipes.Services.Data
 
             await this.ingredientsRepostory.AddAsync(ingredient);
             await this.ingredientsRepostory.SaveChangesAsync();
+        }
+
+        public IEnumerable<Ingredient> GetAllRecipeIngredients(int recipeId)
+        {
+            var ingrediets = this.ingredientsRepostory.All().Where(i => i.RecipeId == recipeId);
+            return ingrediets.ToList();
         }
     }
 }

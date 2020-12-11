@@ -1,10 +1,12 @@
-<div class="main">
+<div class="main" *ngIf="recipe != null">
   <div class="img-wrapper">
+    
     <div class="image">
+      <div class="title">Hello</div>
       <img
-        src="https://hips.hearstapps.com/hmg-prod/images/delish-roast-beef-horizontal-1540505165.jpg"
+        [src]="recipe.imageURL"
         alt=""
-      />
+      />  
     </div>
   </div>
   <div class="aside">
@@ -18,13 +20,7 @@
 
     <div class="description">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis
+        {{recipe.description}}
       </p>
     </div>
 
@@ -41,7 +37,7 @@
       </div>
       <div
         (click)="showIngredientsHandler()"
-        #menuIngredients
+        #menuIngredient
         class="menu-ingredients"
       >
         <i class="fas fa-utensil-spoon"></i>
@@ -112,31 +108,16 @@
 
     <div *ngIf="showIngredients" class="ingredients">
       <ul>
-        <li class="ingredient">
-          <span>Eggs</span>
-        </li>
-        <li class="ingredient">
-          <span>Butter</span>
-        </li>
-        <li class="ingredient">
-          <span>Cheese</span>
-        </li>
-        <li class="ingredient">
-          <span>Salt</span>
-        </li>
-        <li class="ingredient">
-          <span>Pepper</span>
-        </li>
-        <li class="ingredient">
-          <span>Tomatoes</span>
-        </li>
-        <li class="ingredient">
-          <span>Carrot</span>
-        </li>
-        <li class="ingredient">
-          <span>Bread</span>
+        <li *ngFor="let ingredient of recipe.ingredients" class="ingredient">
+          <span class="ingredient-name">{{ingredient.ingredientName}}</span>
+          <div class="mezure">
+            <span>{{ingredient.amount}}</span>
+            <span>{{ingredient.type}}</span>
+          </div>
         </li>
       </ul>
     </div>
   </div>
 </div>
+
+<app-loading *ngIf="recipe == null"></app-loading>

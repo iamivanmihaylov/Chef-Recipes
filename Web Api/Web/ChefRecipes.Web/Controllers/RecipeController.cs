@@ -29,7 +29,16 @@
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            return this.Ok("Works");
+            var recipe = this.recipeService.GetById(id);
+
+            if (recipe == null)
+            {
+                return this.NotFound();
+            }
+
+            recipe.Ingredients = this.ingredientService.GetAllRecipeIngredients(id).ToList();
+
+            return this.Ok(recipe);
         }
 
         [HttpGet]
@@ -49,16 +58,11 @@
         [HttpPost]
         public async Task<IActionResult> Post(RecipeInputModel inputModel)
         {
-            var recipe = new Recipe()
-            {
-                Description = inputModel.Description,
-                ImageURL = inputModel.Description,
-            };
 
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var user = await this.userManager.FindByIdAsync(userId);
 
-            var recipeId = await this.recipeService.PostAsync(recipe.Description, recipe.ImageURL, user);
+            var recipeId = await this.recipeService.PostAsync(inputModel.Title,inputModel.Description, inputModel.ImageURL, user);
 
             foreach (var ingredient in inputModel.Ingredients)
             {

@@ -18,4 +18,8 @@ export class RecipeService {
       headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
     });
   }
+
+  openRecipe(id:number):Observable<IRecipe>{
+    return this.http.get<IRecipe>(this.recipeUrl+id)
+  }
 }

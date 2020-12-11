@@ -6,6 +6,16 @@
       </div>
     </div>
     <div class="aside">
+      <div class="field title">
+        <label for="">Title</label>
+        <div class="title-inputs">
+          <input formControlName="title" type="text" name="" id="" />
+        </div>
+        <app-error *ngIf="form.get('title').touched && form.get('title').errors?.required">
+          ImageURL is required!
+        </app-error>
+      </div>
+
       <div class="field description">
         <label for="">Description</label>
         <textarea formControlName="description" name="" id="" cols="30" rows="10"></textarea>

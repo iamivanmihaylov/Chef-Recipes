@@ -2,7 +2,7 @@
   <ul>
     <li class="profile">
       <app-icon [height]="35" [width]="35" [text]="stringService.getFirstCharToUpper(user.userName)"></app-icon>
-      <a [routerLink]="['/profile', user.userId]">@{{ user.userName }}</a>
+      <a [routerLink]="['/identity', user.userId]">@{{ user.userName }}</a>
     </li>
     <li class="right">
       <a (click)="logoutHandler()">Logout</a>

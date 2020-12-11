@@ -14,6 +14,6 @@
 
         Task DeleteAsync(int id);
 
-        Task<int> PostAsync(string description, string imageUrl, ApplicationUser user);
+        Task<int> PostAsync(string title, string description, string imageUrl, ApplicationUser user);
     }
 }

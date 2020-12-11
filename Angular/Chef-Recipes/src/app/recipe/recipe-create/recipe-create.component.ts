@@ -34,6 +34,7 @@ export class RecipeCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
+      title:[ '',[Validators.required],[] ],
       description:[ '',[Validators.required],[] ],
       imageURL: ['',[Validators.required],[]],
       ingredients:this.fb.array(
