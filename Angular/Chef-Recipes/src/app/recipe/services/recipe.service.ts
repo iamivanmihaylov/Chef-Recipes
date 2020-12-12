@@ -28,7 +28,6 @@ export class RecipeService {
   }
 
   getAllRecipes(otherParams){
-    console.log(this.recipeUrl+otherParams)
     return this.http.get<IRecipe[]>(this.recipeUrl+otherParams)
   }
 
@@ -43,8 +42,6 @@ export class RecipeService {
   }
 
   likePost(id:number){
-    console.log(this.likeUrl + id)
-    console.log(localStorage.getItem("token"))
     return this.http.post<ILike>(this.likeUrl+id,{},{
       headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
     })

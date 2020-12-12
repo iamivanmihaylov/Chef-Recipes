@@ -61,8 +61,6 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
     let paramId = this.route.snapshot.params["id"]
     this.recipeId = paramId;
 
-    console.log(this.recipeId)
-
     this.recipeService.openRecipe(paramId).subscribe({
       next: (data) =>{
         this.recipe = data;
@@ -79,7 +77,6 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
     });
 
     this.recipeService.getAllComments(this.recipeId).subscribe(data => {
-      console.log(data)
       this.comments = data
     }) 
   }

@@ -2,7 +2,7 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const tinyMceApiKey = ""
+const tinyMceApiKey = "k2it16s7bzj25cfsql89offbfj34nposle0ldukzoykk86zg"
 const apiUrl = "https://localhost:44319/"
 
 export const environment = {

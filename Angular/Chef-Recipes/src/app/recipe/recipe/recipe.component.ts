@@ -25,6 +25,7 @@ export class RecipeComponent implements OnInit {
     if(this.isLiked == true){
       this.recipeService.dislikePost(this.recipe.id).subscribe(data =>{
         this.isLiked = data.isLiked
+        this.likes = data.likesCount;
       })
     }
 
