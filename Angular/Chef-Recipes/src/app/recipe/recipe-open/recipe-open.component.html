@@ -69,7 +69,7 @@
       
       <div *ngFor="let comment of comments" class="comment">
         <div class="comment-user-info">
-          <i class="far fa-user-circle"></i>
+          <app-icon [height]="30" [width]="30" [text]="comment.userUserName?.toString()[0].toUpperCase()"></app-icon>
           <span>@{{comment.userUserName}}</span>
         </div>
         <div class="comment-description">
