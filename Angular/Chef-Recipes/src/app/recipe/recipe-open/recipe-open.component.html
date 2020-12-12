@@ -13,7 +13,7 @@
     <div class="user">
       <div>
         <app-icon [height]="35" [width]="35" [text]="recipe.userUserName?.toString()[0].toUpperCase()"></app-icon>
-        <span class="user-name">@{{recipe.userUserName}}</span>
+        <a class="user-name" [routerLink]="['/identity',recipe.userId]" class="user-name">@{{recipe.userUserName}}</a>
       </div>
       <app-share></app-share>
     </div>

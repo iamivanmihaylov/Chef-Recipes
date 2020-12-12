@@ -25,6 +25,11 @@ export class ProfileComponent implements OnInit {
   public recipes:IRecipe[] = null;
   public recipesCount:number = 0;
 
+  get currentUser(){
+    let currentUser = this.userService.getCurrentUser();
+    return currentUser;
+  }
+
   ngOnInit(): void {
     this.route.params.pipe(switchMap(({ id }) => {
       return this.userService.getUserById(id)
