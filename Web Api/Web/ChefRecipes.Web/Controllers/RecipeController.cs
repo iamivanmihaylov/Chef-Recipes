@@ -8,7 +8,7 @@
 
     using ChefRecipes.Data.Models;
     using ChefRecipes.Services.Data;
-    using ChefRecipes.Web.ViewModels.Recipe;
+    using ChefRecipes.Web.ViewModels.Recipes;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -29,7 +29,7 @@
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var recipe = this.recipeService.GetById(id);
+            var recipe = this.recipeService.GetById<RecipeOutputModel>(id);
 
             if (recipe == null)
             {
@@ -46,10 +46,10 @@
         {
             if (userId != null)
             {
-                return this.Ok(this.recipeService.GetAll().Where(r => r.UserId == userId));
+                return this.Ok(this.recipeService.GetAll<RecipeOutputModel>().Where(r => r.UserId == userId));
             }
 
-            var allRecipes = this.recipeService.GetAll();
+            var allRecipes = this.recipeService.GetAll<RecipeOutputModel>();
             return this.Ok(allRecipes);
         }
 

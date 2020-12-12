@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
     using ChefRecipes.Data.Common.Repositories;
     using ChefRecipes.Data.Models;
+    using ChefRecipes.Services.Mapping;
 
     public class RecipeService : IRecipeService
     {
@@ -22,20 +23,20 @@
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Recipe> GetAll()
+        public IEnumerable<T> GetAll<T>()
         {
-            var recipes = this.recipeRepository.All();
+            var recipes = this.recipeRepository.All().To<T>();
             if (recipes == null)
             {
-                return new List<Recipe>();
+                return new List<T>();
             }
 
             return recipes.ToList();
         }
 
-        public Recipe GetById(int id)
+        public T GetById<T>(int id)
         {
-            var recipe = this.recipeRepository.All().Where(r => r.Id == id).FirstOrDefault();
+            var recipe = this.recipeRepository.All().Where(r => r.Id == id).To<T>().FirstOrDefault();
             return recipe;
         }
 

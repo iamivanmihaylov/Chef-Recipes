@@ -10,4 +10,6 @@ export interface IRecipe{
     imageURL:string,
     description: string,
     ingredients: IIngredient[],
+    commentsCount:number
 }
+

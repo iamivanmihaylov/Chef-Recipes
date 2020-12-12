@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ChefRecipes.Web.ViewModels.Recipe
+namespace ChefRecipes.Web.ViewModels.Recipes
 {
     public class RecipeInputModel
     {

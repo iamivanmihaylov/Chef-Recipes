@@ -8,9 +8,9 @@
 
     public interface IRecipeService
     {
-        IEnumerable<Recipe> GetAll();
+        IEnumerable<T> GetAll<T>();
 
-        Recipe GetById(int id);
+        T GetById<T>(int id);
 
         Task DeleteAsync(int id);
 
