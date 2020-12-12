@@ -58,7 +58,7 @@
       <div *ngIf="showAddComment" class="write-comment">
         <span>Add Comment</span>
         <form #f="ngForm" (ngSubmit)="sendComment(f.value)">
-        <editor #input="ngModel" ngModel name="commentValues" outputFormat="text" [apiKey]="tinyMceKey" [init]="tinyMceSettings" required></editor>
+        <editor #input="ngModel" ngModel name="text" outputFormat="text" [apiKey]="tinyMceKey" [init]="tinyMceSettings" required></editor>
         <div class="add-comment-buttons">
           <button class="add-btn">Add</button>
           <button class="cancel-btn" (click)="closeComment()">Cancel</button>
@@ -70,16 +70,16 @@
       <div *ngFor="let comment of comments" class="comment">
         <div class="comment-user-info">
           <i class="far fa-user-circle"></i>
-          <span>@{{comment.username}}</span>
+          <span>@{{comment.userUserName}}</span>
         </div>
         <div class="comment-description">
           <p>
-           {{comment.description}}
+           {{comment.text}}
           </p>
         </div>
       </div>
 
-      <div *ngIf="comments.length === 0">
+      <div *ngIf="comments === null || comments.length === 0">
         <div class="nothing-container">
           <span class="nothing"> ¯\_(ツ)_/¯ </span>
           <span class="nothing-text"> Oops no comments yet... </span>

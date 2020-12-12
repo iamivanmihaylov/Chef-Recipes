@@ -34,6 +34,7 @@ export class RecipeComponent implements OnInit {
   constructor(private userService:UserService,public stringMainpulation:StringManipulationService) { }
 
   ngOnInit(): void {
+    console.log(this.recipe)
   }
 
 }

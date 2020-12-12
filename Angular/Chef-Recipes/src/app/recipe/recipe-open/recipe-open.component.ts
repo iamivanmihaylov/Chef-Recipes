@@ -37,9 +37,8 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   }
 
   public recipe:IRecipe = null;
-  public comments:IComment[] = [
-
-  ]
+  public comments:IComment[] = null;
+  public recipeId:number;
 
   @ViewChild("menuIngredient") menuIngredients: ElementRef;
   @ViewChild("menuComments") menuComments: ElementRef;
@@ -59,7 +58,8 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
 
   ngOnInit():void{
     let paramId = this.route.snapshot.params["id"]
-    
+    this.recipeId = paramId;
+
     this.recipeService.openRecipe(paramId).subscribe({
       next: (data) =>{
         this.recipe = data;
@@ -70,6 +70,10 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
         }
       }
     })
+
+    this.recipeService.getAllComments(this.recipeId).subscribe(data => {
+      this.comments = data
+    }) 
   }
 
   showIngredientsHandler():void{
@@ -115,13 +119,11 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   }
 
   sendComment(formData){
-    console.log(formData);
+     this.recipeService.createComment(this.recipeId,formData).subscribe(data => {
+       this.comments = data;
+       this.closeComment();
+     })
+
     
-    let comment:IComment = {
-      description: formData.commentValues,
-      username: this.userService.getCurrentUser().userName,
-    }
-    this.comments.push(comment)
-    this.toggleAddComment();
   }
 }

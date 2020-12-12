@@ -1,4 +1,6 @@
 export interface IComment{
-    username:string,
-    description:string,
+    userUserName:string,
+    text:string,
+    userId:string,
+    recipeId:string,
 }
