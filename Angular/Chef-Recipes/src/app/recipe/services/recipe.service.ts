@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IComment } from 'src/app/shared/interfaces/comment.model';
+import { ILike } from 'src/app/shared/interfaces/like.model';
 import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 import { environment } from '../../../environments/environment'
 
@@ -12,6 +13,7 @@ export class RecipeService {
 
   recipeUrl:string = environment.apiUrl + "recipe/"
   commentUrl:string = environment.apiUrl + "comment/"
+  likeUrl:string = environment.apiUrl + "like/"
 
   constructor(private http:HttpClient) { }
 
@@ -39,4 +41,25 @@ export class RecipeService {
       headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
     })
   }
+
+  likePost(id:number){
+    console.log(this.likeUrl + id)
+    console.log(localStorage.getItem("token"))
+    return this.http.post<ILike>(this.likeUrl+id,{},{
+      headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
+    })
+  }
+
+  dislikePost(id:number){
+    return this.http.delete<ILike>(this.likeUrl+id,{
+      headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
+    })
+  }
+
+  getAllLikes(id:number){
+    return this.http.get<ILike>(this.likeUrl+id,{
+      headers:new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem("token")}`)
+    })
+  }
+
 }

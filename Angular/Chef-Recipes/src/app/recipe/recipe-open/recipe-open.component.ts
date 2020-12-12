@@ -48,7 +48,8 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
     private userService:UserService,
     private recipeService:RecipeService,
     private route:ActivatedRoute,
-    private router:Router) { }
+    private router:Router,
+    ) { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -59,6 +60,8 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   ngOnInit():void{
     let paramId = this.route.snapshot.params["id"]
     this.recipeId = paramId;
+
+    console.log(this.recipeId)
 
     this.recipeService.openRecipe(paramId).subscribe({
       next: (data) =>{
@@ -71,7 +74,12 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
       }
     })
 
+    this.recipeService.getAllLikes(this.recipeId).subscribe(data => {
+      this.isLiked = data.isLiked;
+    });
+
     this.recipeService.getAllComments(this.recipeId).subscribe(data => {
+      console.log(data)
       this.comments = data
     }) 
   }
@@ -107,7 +115,17 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   }
 
   likeHandler(){
-    this.isLiked = !this.isLiked;
+    if(this.isLiked == true){
+      this.recipeService.dislikePost(this.recipeId).subscribe(data =>{
+        this.isLiked = data.isLiked
+      })
+    }
+
+    if(this.isLiked == false){
+      this.recipeService.likePost(this.recipeId).subscribe(data => {
+        this.isLiked = data.isLiked;
+      })
+    }
   }
 
   toggleAddComment(){

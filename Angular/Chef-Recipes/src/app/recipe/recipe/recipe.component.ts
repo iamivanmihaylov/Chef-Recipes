@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 import { StringManipulationService } from 'src/app/shared/services/string-manipulation.service';
 import { UserService } from 'src/app/user/services/user.service';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -12,7 +13,7 @@ export class RecipeComponent implements OnInit {
 
   @Input() recipe:IRecipe;
 
-  isLiked = false
+  isLiked = false;
   likes = 0;
 
  get isAuthenticated() {
@@ -21,20 +22,29 @@ export class RecipeComponent implements OnInit {
   
 
   likeHandler(){
-    if(this.isLiked){
-      this.likes -= 1;
+    if(this.isLiked == true){
+      this.recipeService.dislikePost(this.recipe.id).subscribe(data =>{
+        this.isLiked = data.isLiked
+      })
     }
-    else{
-      this.likes += 1;
+
+    if(this.isLiked == false){
+      this.recipeService.likePost(this.recipe.id).subscribe(data => {
+        this.isLiked = data.isLiked;
+        this.likes = data.likesCount;
+      })
     }
-    
-    this.isLiked = !this.isLiked
   }
 
-  constructor(private userService:UserService,public stringMainpulation:StringManipulationService) { }
+  constructor(private userService:UserService,
+    public stringMainpulation:StringManipulationService,
+    public recipeService:RecipeService) { }
 
   ngOnInit(): void {
-    console.log(this.recipe)
+    this.recipeService.getAllLikes(this.recipe.id).subscribe(data => {
+      this.isLiked = data.isLiked;
+      this.likes = data.likesCount;
+    });
   }
 
 }
