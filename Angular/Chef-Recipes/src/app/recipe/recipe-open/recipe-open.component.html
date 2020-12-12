@@ -67,48 +67,28 @@
         
       </div>
       
-      <div class="comment">
+      <div *ngFor="let comment of comments" class="comment">
         <div class="comment-user-info">
           <i class="far fa-user-circle"></i>
-          <span>@dani4356</span>
+          <span>@{{comment.username}}</span>
         </div>
         <div class="comment-description">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis
+           {{comment.description}}
           </p>
         </div>
       </div>
 
-      <div class="comment">
-        <div class="comment-user-info">
-          <span>@dani4356</span>
-        </div>
-        <div class="comment-description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis
-          </p>
+      <div *ngIf="comments.length === 0">
+        <div class="nothing-container">
+          <span class="nothing"> ¯\_(ツ)_/¯ </span>
+          <span class="nothing-text"> Oops no comments yet... </span>
         </div>
       </div>
 
-      <div class="comment">
-        <div class="comment-user-info">
-          <i class="far fa-user-circle"></i>
-          <span>@dani4356</span>
-        </div>
-        <div class="comment-description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis
-          </p>
-        </div>
-      </div>
+
+     
     </div>
-
     <div *ngIf="showIngredients" class="ingredients">
       <ul>
         <li *ngFor="let ingredient of recipe.ingredients" class="ingredient">
@@ -121,6 +101,8 @@
       </ul>
     </div>
   </div>
+
+
 </div>
 
 <app-loading *ngIf="recipe == null"></app-loading>

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { nextTick } from 'process';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { IComment } from 'src/app/shared/interfaces/comment.model';
 import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 import { UserService } from 'src/app/user/services/user.service';
 import { environment } from '../../../environments/environment'
@@ -36,6 +37,9 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
   }
 
   public recipe:IRecipe = null;
+  public comments:IComment[] = [
+
+  ]
 
   @ViewChild("menuIngredient") menuIngredients: ElementRef;
   @ViewChild("menuComments") menuComments: ElementRef;
@@ -112,6 +116,12 @@ export class RecipeOpenComponent implements AfterViewInit, OnInit {
 
   sendComment(formData){
     console.log(formData);
-    // Add comment
+    
+    let comment:IComment = {
+      description: formData.commentValues,
+      username: this.userService.getCurrentUser().userName,
+    }
+    this.comments.push(comment)
+    this.toggleAddComment();
   }
 }

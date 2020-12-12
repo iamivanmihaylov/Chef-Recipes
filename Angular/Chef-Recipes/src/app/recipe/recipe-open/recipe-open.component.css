@@ -112,6 +112,7 @@
 .comments {
   overflow-y: scroll;
   height: 300px;
+  width: 668px;
 }
 
 .menu-like {
@@ -248,4 +249,19 @@
 
 editor{
   user-select: none;
+}
+
+.nothing-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.nothing{
+  font-size: 60px;
+}
+
+.nothing-text{
+  font-size: 20px;
 }
