@@ -23,7 +23,8 @@ export class RecipeService {
     return this.http.get<IRecipe>(this.recipeUrl+id)
   }
 
-  getAllRecipes(){
-    return this.http.get<IRecipe[]>(this.recipeUrl)
+  getAllRecipes(otherParams){
+    console.log(this.recipeUrl+otherParams)
+    return this.http.get<IRecipe[]>(this.recipeUrl+otherParams)
   }
 }

@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HomeModule,
+    HomeModule, 
     UserModule,
     RecipeModule,
     HttpClientModule,

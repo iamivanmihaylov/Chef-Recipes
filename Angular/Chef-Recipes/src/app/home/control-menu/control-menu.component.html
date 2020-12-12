@@ -2,14 +2,7 @@
     <div *ngIf="isAuthenticated" class="create-recipe-button">
         <a routerLink="/recipe/create">Create recipe<i class="fas fa-plus"></i></a>
     </div>
-    <div  *ngIf="!isAuthenticated" class="create-recipe-button">
-    </div>
-    <div class="search-container">
-        <input class="search" placeholder="Search..." type="text">
-        <!-- add search -->
-        <a>
-            <i class="fas fa-search"></i>
-        </a>
+    <div *ngIf="!isAuthenticated" class="create-recipe-button">
     </div>
 </div>
 

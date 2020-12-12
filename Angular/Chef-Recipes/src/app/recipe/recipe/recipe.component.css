@@ -133,3 +133,7 @@
 .is-liked{
     color: rgba(237, 0, 53, 1);
   }
+
+  a{
+      color:  white;
+  }

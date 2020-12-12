@@ -13,6 +13,7 @@ export class RecipeComponent implements OnInit {
   @Input() recipe:IRecipe;
 
   isLiked = false
+  likes = 0;
 
  get isAuthenticated() {
    return this.userService.isAuthenticated();
@@ -20,6 +21,13 @@ export class RecipeComponent implements OnInit {
   
 
   likeHandler(){
+    if(this.isLiked){
+      this.likes -= 1;
+    }
+    else{
+      this.likes += 1;
+    }
+    
     this.isLiked = !this.isLiked
   }
 

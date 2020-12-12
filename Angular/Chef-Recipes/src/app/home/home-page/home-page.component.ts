@@ -1,5 +1,7 @@
 import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from 'src/app/recipe/services/recipe.service';
+import { IRecipe } from 'src/app/shared/interfaces/recipe.model';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  public recipes:IRecipe[] = null;
+
+  constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
+    this.recipeService.getAllRecipes("").subscribe(data => {
+      this.recipes = data;
+    })
   }
 
 }

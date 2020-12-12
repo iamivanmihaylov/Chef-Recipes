@@ -42,8 +42,13 @@
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(string userId)
         {
+            if (userId != null)
+            {
+                return this.Ok(this.recipeService.GetAll().Where(r => r.UserId == userId));
+            }
+
             var allRecipes = this.recipeService.GetAll();
             return this.Ok(allRecipes);
         }
@@ -59,7 +64,6 @@
         [HttpPost]
         public async Task<IActionResult> Post(RecipeInputModel inputModel)
         {
-
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var user = await this.userManager.FindByIdAsync(userId);
 

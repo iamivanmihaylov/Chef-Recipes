@@ -8,16 +8,18 @@
     <div class="bottom">
         <div class="user-info">
             <app-icon [height]="25" [width]="25" [text]="recipe.userUserName?.toString()[0].toUpperCase()"></app-icon>
-            <span>@{{recipe.userUserName}}</span>
+            <span><a [routerLink]="['/identity',recipe.userId]">
+                @{{recipe.userUserName}}
+            </a></span>
         </div>
         <div *ngIf="isAuthenticated" class="likes-comments">
             <div class="likes">
                 <i (click)="likeHandler()" [ngClass]="{ 'fas is-liked':isLiked}" class="far fa-heart"></i>
-                <span>10k</span>
+                <span>{{likes}}</span>
             </div>
             <div class="comments">
                 <i class="far fa-comment-dots"></i>
-                <span>5k</span>
+                <span>0</span>
             </div>
         </div>
     </div>

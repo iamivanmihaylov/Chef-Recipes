@@ -61,3 +61,33 @@
     text-align: center;
     word-break: break-all;
 }
+
+.nothing-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.nothing{
+    font-size: 60px;
+}
+
+.nothing-text{
+    font-size: 20px;
+}
+
+.create-recipe{
+    padding: 18px 26px;
+    background: radial-gradient(circle, rgba(52,231,51,1) 0%, rgba(55,201,54,1) 100%);
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
