@@ -30,6 +30,15 @@
             var currentUser = await this.userManager.FindByIdAsync(userId);
             var allLikes = this.likeService.GetAllPostLikes(recipeId);
 
+            if (currentUser == null)
+            {
+                return this.Ok(new LikeOutputModel()
+                {
+                    IsLiked = false,
+                    LikesCount = allLikes,
+                });
+            }
+
             var outputModel = new LikeOutputModel()
             {
                 IsLiked = this.likeService.IsLiked(recipeId, currentUser.Id),
